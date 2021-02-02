@@ -5,23 +5,21 @@
 
 ## **Multiple Conditions**
 
-Se você tem muitas condições para uma mesma variável, pode usar o método a seguir
+If you have many conditions for the same variable, you can use this method.
 
-**Ruim:**
+**Bad:**
 
 ```javascript
-// Troque isso
 if(x === 'abc' || x === 'def' || x === 'ghi' || x === 'jkl') {
-    // qualquer coisa
+    // code
 }
 ```
 
-**Bom:**
+**Good:**
 
 ```javascript
-// Por isso
 if(['abc', 'def', 'ghi', 'jkl'].includes(x)) {
-    // qualquer coisa
+    // code
 }
 ```
 
@@ -29,13 +27,11 @@ if(['abc', 'def', 'ghi', 'jkl'].includes(x)) {
 
 ## **Ternary**
 
-Isto pode reduzir muito seus códigos.
-Tire esse boiler plate de if...else e usa mais ternários.
+This can reduce your codes.
 
-**Ruim:**
+**Bad:**
 
 ```javascript
-// Troque isso
 let test: boolean;
 if( x > 10 ) {
     test = true;
@@ -44,13 +40,13 @@ if( x > 10 ) {
 }
 ```
 
-**Bom:**
+**Good:**
 
 ```javascript
-// Por isso
+// Option 1
 let test = (x > 10) ? true : false;
 
-// Ou isso
+// Option 2
 let test = x > 10;
 
 console.log(test);
