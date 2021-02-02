@@ -8,6 +8,8 @@
 **Bad:**
 
 ```javascript
+let x = 'abc'
+
 if(x === 'abc' || x === 'def' || x === 'ghi' || x === 'jkl') {
     // code
 }
@@ -16,6 +18,8 @@ if(x === 'abc' || x === 'def' || x === 'ghi' || x === 'jkl') {
 **Good:**
 
 ```javascript
+let x = 'abc'
+
 if(['abc', 'def', 'ghi', 'jkl'].includes(x)) {
     // code
 }
@@ -31,9 +35,9 @@ if(['abc', 'def', 'ghi', 'jkl'].includes(x)) {
 let x = 20;
 
 if( x > 10 ) {
-    test = true;
+    test = true
 } else {
-    test = false;
+    test = false
 }
 
 console.log(test) //true
