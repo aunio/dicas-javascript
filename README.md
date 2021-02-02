@@ -1,7 +1,7 @@
 # javascript-tips
 
 1. [Multiple Conditions](#multiple-conditions)
-2. [Ternary](#ternary)
+2. [Ternary Operator](#ternary-operator)
 3. [Date](#date)
 4. [If Validation](#if-validation)
 5. [Array Order Alphabetically](#array-order-alphabetically)
@@ -30,7 +30,7 @@ if(['abc', 'def', 'ghi', 'jkl'].includes(x)) {
 
 **[⬆ Back to the top](#javascript-tips)**
 
-## **Ternary**
+## **Ternary Operator**
 
 **Bad:**
 
