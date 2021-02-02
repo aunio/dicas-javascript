@@ -28,25 +28,29 @@ if(['abc', 'def', 'ghi', 'jkl'].includes(x)) {
 **Bad:**
 
 ```javascript
-let test: boolean;
+let x = 20;
+
 if( x > 10 ) {
     test = true;
 } else {
     test = false;
 }
+
+console.log(test) //true
 ```
 
 **Good:**
 
 ```javascript
+let x = 20;
+
 // Option 1
-let test = (x > 10) ? true : false;
+let test1 = (x > 10) ? true : false;
+console.log(test1); //true
 
 // Option 2
-let test = x > 10;
-
-console.log(test);
-// log: true
+let test2 = x > 10;
+console.log(test2) //true
 ```
 
 **[⬆ Back to the top](#javascript-tips)**
