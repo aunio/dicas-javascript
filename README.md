@@ -5,8 +5,6 @@
 
 ## **Multiple Conditions**
 
-If you have many conditions for the same variable, you can use this method.
-
 **Bad:**
 
 ```javascript
@@ -26,8 +24,6 @@ if(['abc', 'def', 'ghi', 'jkl'].includes(x)) {
 **[⬆ Back to the top](#javascript-tips)**
 
 ## **Ternary**
-
-This can reduce your codes.
 
 **Bad:**
 
