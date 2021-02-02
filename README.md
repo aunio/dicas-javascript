@@ -23,7 +23,7 @@ if(['abc', 'def', 'ghi', 'jkl'].includes(x)) {
 }
 ```
 
-**[⬆ Voltar ao início](#javascript-tips)**
+**[⬆ Back to the top](#javascript-tips)**
 
 ## **Ternary**
 
@@ -53,4 +53,4 @@ console.log(test);
 // log: true
 ```
 
-**[⬆ Voltar ao início](#dicas-javascript)**
+**[⬆ Back to the top](#javascript-tips)**
