@@ -2,7 +2,8 @@
 
 1. [Multiple Conditions](#multiple-conditions)
 2. [Ternary](#ternary)
-2. [Date](#date)
+3. [Date](#date)
+4. [IF Validation](#if-validation)
 
 ## **Multiple Conditions**
 
@@ -89,6 +90,45 @@ console.log(newDate1) // 1 de janeiro de 2021
 
 newDate2 = date.toLocaleDateString("pt-br", { ...options, month: "numeric"})
 console.log(newDate2) // 01/01/2021
+```
+
+**[⬆ Back to the top](#javascript-tips)**
+
+## **If Validation**
+
+**Bad:**
+
+```javascript
+function graduation(schooling) {
+  if( schooling === "EM" ) {
+    return "Ensino Médio"
+  } else if ( schooling === "ES" ) {
+    return "Ensino Superior"
+  } else if ( schooling === "M" ) {
+    return "Mestrado"
+  } else if( schooling === "D" ) {
+    return "Doutorado"
+  }
+}
+
+console.log(graduation("EM")) // Ensino Médio
+```
+
+**Good:**
+
+```javascript
+function graduation(schooling) {
+  const graduations = {
+    "EM": "Ensino Médio",
+    "ES": "Ensino Superior",
+    "M": "Mestrado",
+    "D": "Doutorado"
+  }
+
+  return graduations[schooling]
+}
+
+console.log(graduation("EM")) // Ensino Médio
 ```
 
 **[⬆ Back to the top](#javascript-tips)**
