@@ -70,7 +70,7 @@ const date = new Date(2021, 0, 1)
 const [full, year, month, day] = regex.exec(date.toISOString())
 
 newDate = `${day}/${month}/${year}`
-console.log(newDate) //01/01/2021
+console.log(newDate) // 01/01/2021
 ```
 
 **Good:**
