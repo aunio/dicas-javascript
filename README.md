@@ -1,9 +1,9 @@
-# dicas-javascript
+# javascript-tips
 
-1. [Múltiplas Condições](#multiplas-condicoes)
-2. [Ternários](#ternarios)
+1. [Multiple Conditions](#multiple-conditions)
+2. [Ternary](#ternary)
 
-## **Múltiplas Condições**
+## **Multiple Conditions**
 
 Se você tem muitas condições para uma mesma variável, pode usar o método a seguir
 
@@ -25,9 +25,9 @@ if(['abc', 'def', 'ghi', 'jkl'].includes(x)) {
 }
 ```
 
-**[⬆ Voltar ao início](#dicas-javascript)**
+**[⬆ Voltar ao início](#javascript-tips)**
 
-## **Ternários**
+## **Ternary**
 
 Isto pode reduzir muito seus códigos.
 Tire esse boiler plate de if...else e usa mais ternários.
