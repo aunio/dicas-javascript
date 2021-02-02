@@ -101,18 +101,18 @@ console.log(newDate2) // 01/01/2021
 
 ```javascript
 function identifyAnimal(animal) {
-  if( animal === "D" ) {
-    return "Dog"
-  } else if ( animal === "C" ) {
-    return "Cat"
-  } else if ( animal === "T" ) {
-    return "Tiger"
-  } else if( animal === "L" ) {
-    return "Lion"
+  if( animal === "Dog" ) {
+    return "Pluto"
+  } else if ( animal === "Cat" ) {
+    return "Tom"
+  } else if ( animal === "Mouse" ) {
+    return "Jerry"
+  } else if( animal === "Duck" ) {
+    return "Donald"
   }
 }
 
-console.log(identifyAnimal("D")) // Dog
+console.log(identifyAnimal("Dog")) // Pluto
 ```
 
 **Good:**
@@ -120,16 +120,16 @@ console.log(identifyAnimal("D")) // Dog
 ```javascript
 function identifyAnimal(animal) {
   const animals = {
-    "D": "Dog",
-    "C": "Cat",
-    "T": "Tiger",
-    "L": "Lion"
+    "Dog": "Pluto",
+    "Cat": "Tom",
+    "Mouse": "Jerry",
+    "Duck": "Donald"
   }
 
   return animals[animal]
 }
 
-console.log(identifyAnimal("D")) // Dog
+console.log(identifyAnimal("Dog")) // Pluto
 ```
 
 **[⬆ Back to the top](#javascript-tips)**
