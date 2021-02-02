@@ -4,6 +4,8 @@
 
 ## **Múltiplas Condições**
 
+### Se você tem muitas condições para uma mesma variável, pode usar o método a seguir
+
 **Ruim:**
 
 ```javascript
@@ -21,3 +23,5 @@ if(['abc', 'def', 'ghi', 'jkl'].includes(x)) {
     // qualquer coisa
 }
 ```
+
+**[⬆ Voltar ao início](#dicas-javascript)**
