@@ -52,7 +52,7 @@ console.log(test);
 
 **[⬆ Back to the top](#javascript-tips)**
 
-## **Null Undefined Empty checks**
+## **Null Undefined Empty Checks**
 
 **Bad:**
 
