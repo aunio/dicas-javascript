@@ -3,7 +3,7 @@
 1. [Multiple Conditions](#multiple-conditions)
 2. [Ternary](#ternary)
 3. [Date](#date)
-4. [IF Validation](#if-validation)
+4. [If Validation](#if-validation)
 
 ## **Multiple Conditions**
 
