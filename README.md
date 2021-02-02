@@ -135,6 +135,7 @@ console.log(identifyAnimal("D")) // Dog
 **[⬆ Back to the top](#javascript-tips)**
 
 ## **Array Order Alphabetically**
+Sorting strings with numbers and accented characters.
 
 ```javascript
 const movies = [
