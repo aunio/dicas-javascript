@@ -4,7 +4,7 @@
 
 ## **Múltiplas Condições**
 
-### Se você tem muitas condições para uma mesma variável, pode usar o método a seguir
+Se você tem muitas condições para uma mesma variável, pode usar o método a seguir
 
 **Ruim:**
 
