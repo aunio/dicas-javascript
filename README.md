@@ -99,36 +99,36 @@ console.log(newDate2) // 01/01/2021
 **Bad:**
 
 ```javascript
-function graduation(schooling) {
-  if( schooling === "EM" ) {
-    return "Ensino Médio"
-  } else if ( schooling === "ES" ) {
-    return "Ensino Superior"
-  } else if ( schooling === "M" ) {
-    return "Mestrado"
-  } else if( schooling === "D" ) {
-    return "Doutorado"
+function identifyAnimal(animal) {
+  if( animal === "D" ) {
+    return "Dog"
+  } else if ( animal === "C" ) {
+    return "Cat"
+  } else if ( animal === "T" ) {
+    return "Tiger"
+  } else if( animal === "L" ) {
+    return "Lion"
   }
 }
 
-console.log(graduation("EM")) // Ensino Médio
+console.log(identifyAnimal("D")) // Dog
 ```
 
 **Good:**
 
 ```javascript
-function graduation(schooling) {
-  const graduations = {
-    "EM": "Ensino Médio",
-    "ES": "Ensino Superior",
-    "M": "Mestrado",
-    "D": "Doutorado"
+function identifyAnimal(animal) {
+  const animals = {
+    "D": "Dog",
+    "C": "Cat",
+    "T": "Tiger",
+    "L": "Lion"
   }
 
-  return graduations[schooling]
+  return animals[animal]
 }
 
-console.log(graduation("EM")) // Ensino Médio
+console.log(identifyAnimal("D")) // Dog
 ```
 
 **[⬆ Back to the top](#javascript-tips)**
