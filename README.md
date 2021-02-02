@@ -142,7 +142,7 @@ const movies = [
   'Harry Potter',
   'Senhor dos Anéis',
   'Árvore da Vida',
-  'As Braquelas',
+  'As Branquelas',
   '8 Mile - Rua das Ilusões'
 ]
 
@@ -153,7 +153,7 @@ console.log(
 /* [
   "8 Mile - Rua das Ilusões",
   "Árvore da Vida",
-  "As Braquelas",
+  "As Branquelas",
   "Harry Potter",
   "Senhor dos Anéis"
 ] */
