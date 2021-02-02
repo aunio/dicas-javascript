@@ -2,6 +2,7 @@
 
 1. [Multiple Conditions](#multiple-conditions)
 2. [Ternary](#ternary)
+3. [Null, Undefined and Empty Checks](#null-undefined-empty-checks)
 
 ## **Multiple Conditions**
 
@@ -47,6 +48,24 @@ let test = x > 10;
 
 console.log(test);
 // log: true
+```
+
+**[⬆ Back to the top](#javascript-tips)**
+
+## **Null Undefined Empty checks**
+
+**Bad:**
+
+```javascript
+if(test1 !== null || test1 !== undefined || test1 !== '') {
+    let test2 = test1
+}
+```
+
+**Good:**
+
+```javascript
+let test2 = test1 || ''
 ```
 
 **[⬆ Back to the top](#javascript-tips)**
