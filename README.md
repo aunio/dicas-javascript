@@ -4,6 +4,7 @@
 2. [Ternary](#ternary)
 3. [Date](#date)
 4. [If Validation](#if-validation)
+5. [Array Order Alphabetically](#array-order-alphabetically)
 
 ## **Multiple Conditions**
 
@@ -129,6 +130,32 @@ function identifyAnimal(animal) {
 }
 
 console.log(identifyAnimal("D")) // Dog
+```
+
+**[⬆ Back to the top](#javascript-tips)**
+
+## **Array Order Alphabetically**
+
+```javascript
+const movies = [
+  'Harry Potter',
+  'Senhor dos Anéis',
+  'Árvore da Vida',
+  'As Braquelas',
+  '8 Mile - Rua das Ilusões'
+]
+
+console.log(
+  movies.sort(Intl.Collator().compare)
+)
+
+/* [
+  "8 Mile - Rua das Ilusões",
+  "Árvore da Vida",
+  "As Braquelas",
+  "Harry Potter",
+  "Senhor dos Anéis"
+] */
 ```
 
 **[⬆ Back to the top](#javascript-tips)**
