@@ -167,15 +167,15 @@ Foreach Loop is a control flow statement for traversing items in a collection.
 
 ```javascript
 const pokemons = [
-    {id: 1, name: 'Bulbasaur', type: [ 'Grass', 'Poison' ]},
-    {id: 2, name: 'Ivysaur', type: [ 'Grass', 'Poison' ]},
-    {id: 3, name: 'Venusaur', type: [ 'Grass', 'Poison' ]},
-    {id: 4, name: 'Charmander', type: [ 'Fire' ]},
-    {id: 5, name: 'Charmeleon', type: [ 'Fire' ]},
-    {id: 6, name: 'Charizard', type: [ 'Fire', 'Flying' ]},
-    {id: 7, name: 'Squirtle', type: [ 'Water' ]},
-    {id: 8, name: 'Wartotle', type: [ 'Water' ]},
-    {id: 9, name: 'Blastoise', type: [ 'Water' ]}
+    { id: 1, name: 'Bulbasaur', type: { primary: 'Grass', secondary: 'Poison' } },
+    { id: 2, name: 'Ivysaur', type: { primary: 'Grass', secondary: 'Poison' } },
+    { id: 3, name: 'Venusaur', type: { primary: 'Grass', secondary: 'Poison' } },
+    { id: 4, name: 'Charmander', type: { primary: 'Fire', secondary: null } },
+    { id: 5, name: 'Charmeleon', type: { primary: 'Fire', secondary: null } },
+    { id: 6, name: 'Charizard', type: { primary: 'Fire', secondary: 'Flying' } },
+    { id: 7, name: 'Squirtle', type: { primary: 'Water', secondary: null } },
+    { id: 8, name: 'Wartotle', type: { primary: 'Water', secondary: null } },
+    { id: 9, name: 'Blastoise', type: { primary: 'Water', secondary: null } },
 ]
 ```
 
@@ -188,15 +188,15 @@ for(let i = 0; i < pokemons.length; i++) {
 }
 
 /*
-    {id:1,name:"Bulbasaur",type:(2) ["Grass","Poison"]}
-    {id:2,name:"Ivysaur",type:(2) ["Grass","Poison"]}
-    {id:3,name:"Venusaur",type:(2) ["Grass","Poison"]}
-    {id:4,name:"Charmander",type:(1) ["Fire"]}
-    {id:5,name:"Charmeleon",type:(1) ["Fire"]}
-    {id:6,name:"Charizard",type:(2) ["Fire","Flying"]}
-    {id:7,name:"Squirtle",type:(1) ["Water"]}
-    {id:8,name:"Wartotle",type:(1) ["Water"]}
-    {id:9,name:"Blastoise",type:(1) ["Water"]}
+    { id:1, name:"Bulbasaur", type: { primary:"Grass", secondary:"Poison" } }
+    { id:2, name:"Ivysaur", type: { primary:"Grass", secondary:"Poison" } }
+    { id:3, name:"Venusaur", type: { primary:"Grass", secondary:"Poison" } }
+    { id:4, name:"Charmander", type: { primary:"Fire", secondary:null } }
+    { id:5, name:"Charmeleon", type: { primary:"Fire", secondary:null } }
+    { id:6, name:"Charizard", type: { primary:"Fire", secondary:"Flying" } }
+    { id:7, name:"Squirtle", type: { primary:"Water", secondary:null } }
+    { id:8, name:"Wartotle", type: { primary:"Water", secondary:null } }
+    { id:9, name:"Blastoise", type: { primary:"Water", secondary:null } }
 */
 ```
 
@@ -208,15 +208,15 @@ pokemons.forEach((pokemon) => {
 })
 
 /*
-    {id:1,name:"Bulbasaur",type:(2) ["Grass","Poison"]}
-    {id:2,name:"Ivysaur",type:(2) ["Grass","Poison"]}
-    {id:3,name:"Venusaur",type:(2) ["Grass","Poison"]}
-    {id:4,name:"Charmander",type:(1) ["Fire"]}
-    {id:5,name:"Charmeleon",type:(1) ["Fire"]}
-    {id:6,name:"Charizard",type:(2) ["Fire","Flying"]}
-    {id:7,name:"Squirtle",type:(1) ["Water"]}
-    {id:8,name:"Wartotle",type:(1) ["Water"]}
-    {id:9,name:"Blastoise",type:(1) ["Water"]}
+    { id:1, name:"Bulbasaur", type: { primary:"Grass", secondary:"Poison" } }
+    { id:2, name:"Ivysaur", type: { primary:"Grass", secondary:"Poison" } }
+    { id:3, name:"Venusaur", type: { primary:"Grass", secondary:"Poison" } }
+    { id:4, name:"Charmander", type: { primary:"Fire", secondary:null } }
+    { id:5, name:"Charmeleon", type: { primary:"Fire", secondary:null } }
+    { id:6, name:"Charizard", type: { primary:"Fire", secondary:"Flying" } }
+    { id:7, name:"Squirtle", type: { primary:"Water", secondary:null } }
+    { id:8, name:"Wartotle", type: { primary:"Water", secondary:null } }
+    { id:9, name:"Blastoise", type: { primary:"Water", secondary:null } }
 */
 ```
 
