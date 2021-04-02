@@ -186,18 +186,6 @@ const pokemons = [
 for(let i = 0; i < pokemons.length; i++) {
   console.log(pokemons[i])
 }
-
-/*
-    {id:1,name:"Bulbasaur",type:(2) ["Grass","Poison"]}
-    {id:2,name:"Ivysaur",type:(2) ["Grass","Poison"]}
-    {id:3,name:"Venusaur",type:(2) ["Grass","Poison"]}
-    {id:4,name:"Charmander",type:(1) ["Fire"]}
-    {id:5,name:"Charmeleon",type:(1) ["Fire"]}
-    {id:6,name:"Charizard",type:(2) ["Fire","Flying"]}
-    {id:7,name:"Squirtle",type:(1) ["Water"]}
-    {id:8,name:"Wartotle",type:(1) ["Water"]}
-    {id:9,name:"Blastoise",type:(1) ["Water"]}
-*/
 ```
 
 **Good:**
@@ -206,7 +194,10 @@ for(let i = 0; i < pokemons.length; i++) {
 pokemons.forEach((pokemon) => {
   console.log(pokemon)
 })
+```
 
+**Result:**
+```javascript
 /*
     {id:1,name:"Bulbasaur",type:(2) ["Grass","Poison"]}
     {id:2,name:"Ivysaur",type:(2) ["Grass","Poison"]}
