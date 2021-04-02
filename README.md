@@ -5,6 +5,7 @@
 3. [Date](#date)
 4. [If Validation](#if-validation)
 5. [Array Order Alphabetically](#array-order-alphabetically)
+6. [Foreach Loop](#foreach)
 
 ## **Multiple Conditions**
 
@@ -79,9 +80,9 @@ console.log(newDate) // 01/01/2021
 
 ```javascript
 const options = {
-  year: "numeric",
-  month: "long",
-  day: "numeric"
+    year: "numeric",
+    month: "long",
+    day: "numeric"
 }
 
 const date = new Date(2021, 0, 1)
@@ -101,15 +102,15 @@ console.log(newDate2) // 01/01/2021
 
 ```javascript
 function identifyAnimal(animal) {
-  if( animal === "Dog" ) {
-    return "Pluto"
-  } else if ( animal === "Cat" ) {
-    return "Tom"
-  } else if ( animal === "Mouse" ) {
-    return "Jerry"
-  } else if( animal === "Duck" ) {
-    return "Donald"
-  }
+    if( animal === "Dog" ) {
+        return "Pluto"
+    } else if ( animal === "Cat" ) {
+        return "Tom"
+    } else if ( animal === "Mouse" ) {
+        return "Jerry"
+    } else if( animal === "Duck" ) {
+        return "Donald"
+    }
 }
 
 console.log(identifyAnimal("Dog")) // Pluto
@@ -119,14 +120,14 @@ console.log(identifyAnimal("Dog")) // Pluto
 
 ```javascript
 function identifyAnimal(animal) {
-  const animals = {
-    "Dog": "Pluto",
-    "Cat": "Tom",
-    "Mouse": "Jerry",
-    "Duck": "Donald"
-  }
+    const animals = {
+        "Dog": "Pluto",
+        "Cat": "Tom",
+        "Mouse": "Jerry",
+        "Duck": "Donald"
+    }
 
-  return animals[animal]
+    return animals[animal]
 }
 
 console.log(identifyAnimal("Dog")) // Pluto
@@ -139,24 +140,72 @@ Sorting strings with numbers and accented characters.
 
 ```javascript
 const movies = [
-  'Harry Potter',
-  'Senhor dos Anéis',
-  'Árvore da Vida',
-  'As Branquelas',
-  '8 Mile - Rua das Ilusões'
+    'Harry Potter',
+    'Senhor dos Anéis',
+    'Árvore da Vida',
+    'As Branquelas',
+    '8 Mile - Rua das Ilusões'
 ]
 
 console.log(
-  movies.sort(Intl.Collator().compare)
+    movies.sort(Intl.Collator().compare)
 )
 
 /* [
-  "8 Mile - Rua das Ilusões",
-  "Árvore da Vida",
-  "As Branquelas",
-  "Harry Potter",
-  "Senhor dos Anéis"
+    "8 Mile - Rua das Ilusões",
+    "Árvore da Vida",
+    "As Branquelas",
+    "Harry Potter",
+    "Senhor dos Anéis"
 ] */
+```
+
+**[⬆ Back to the top](#javascript-tips)**
+
+## **Foreach**
+Foreach Loop is a control flow statement for traversing items in a collection.
+
+```javascript
+const pokemons = [
+    {id: 1, name: 'Bulbasaur', type: [ 'Grass', 'Poison' ]},
+    {id: 2, name: 'Ivysaur', type: [ 'Grass', 'Poison' ]},
+    {id: 3, name: 'Venusaur', type: [ 'Grass', 'Poison' ]},
+    {id: 4, name: 'Charmander', type: [ 'Fire' ]},
+    {id: 5, name: 'Charmeleon', type: [ 'Fire' ]},
+    {id: 6, name: 'Charizard', type: [ 'Fire', 'Flying' ]},
+    {id: 7, name: 'Squirtle', type: [ 'Water' ]},
+    {id: 8, name: 'Wartotle', type: [ 'Water' ]},
+    {id: 9, name: 'Blastoise', type: [ 'Water' ]}
+]
+```
+
+**Bad:**
+
+```javascript
+//forLoop
+for(let i = 0; i < pokemons.length; i++) {
+  console.log(pokemons[i])
+}
+```
+
+**Good:**
+```javascript
+//forEach
+pokemons.forEach((pokemon) => {
+  console.log(pokemon)
+})
+
+/*
+    {id:1,name:"Bulbasaur",type:(2) ["Grass","Poison"]}
+    {id:2,name:"Ivysaur",type:(2) ["Grass","Poison"]}
+    {id:3,name:"Venusaur",type:(2) ["Grass","Poison"]}
+    {id:4,name:"Charmander",type:(1) ["Fire"]}
+    {id:5,name:"Charmeleon",type:(1) ["Fire"]}
+    {id:6,name:"Charizard",type:(2) ["Fire","Flying"]}
+    {id:7,name:"Squirtle",type:(1) ["Water"]}
+    {id:8,name:"Wartotle",type:(1) ["Water"]}
+    {id:9,name:"Blastoise",type:(1) ["Water"]}
+*/
 ```
 
 **[⬆ Back to the top](#javascript-tips)**
