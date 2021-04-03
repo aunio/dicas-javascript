@@ -6,6 +6,7 @@
 4. [If Validation](#if-validation)
 5. [Array Order Alphabetically](#array-order-alphabetically)
 6. [Foreach Loop](#foreach)
+7. [Filter](#filter)
 
 ## **Multiple Conditions**
 
@@ -221,3 +222,64 @@ pokemons.forEach((pokemon) => {
 ```
 
 **[⬆ Back to the top](#javascript-tips)**
+
+//
+//
+//
+//
+//
+//
+//
+
+## **Filter**
+The filter() method creater a new array with all the elements that pass the test implemented by the callback() function.
+
+```javascript
+const pokemons = [
+    { id: 1, name: 'Bulbasaur', type: { primary: 'Grass', secondary: 'Poison' } },
+    { id: 2, name: 'Ivysaur', type: { primary: 'Grass', secondary: 'Poison' } },
+    { id: 3, name: 'Venusaur', type: { primary: 'Grass', secondary: 'Poison' } },
+    { id: 4, name: 'Charmander', type: { primary: 'Fire', secondary: null } },
+    { id: 5, name: 'Charmeleon', type: { primary: 'Fire', secondary: null } },
+    { id: 6, name: 'Charizard', type: { primary: 'Fire', secondary: 'Flying' } },
+    { id: 7, name: 'Squirtle', type: { primary: 'Water', secondary: null } },
+    { id: 8, name: 'Wartotle', type: { primary: 'Water', secondary: null } },
+    { id: 9, name: 'Blastoise', type: { primary: 'Water', secondary: null } },
+]
+```
+
+**Bad:**
+
+```javascript
+//forLoop
+let filterPokemons = []
+for(let i = 0; i < pokemons.length; i++) {
+  if(pokemons[i].type.primary === 'Fire') {
+    filterPokemons.push(pokemons[i])
+  }
+}
+
+/*
+    { id:4, name:"Charmander", type: { primary:"Fire", secondary:null } }
+    { id:5, name:"Charmeleon", type: { primary:"Fire", secondary:null } }
+    { id:6, name:"Charizard", type: { primary:"Fire", secondary:"Flying" } }
+*/
+```
+
+**Good:**
+```javascript
+//filter()
+let filterPokemons = pokemons.filter(
+  pokemon => pokemon.type.primary === 'Fire'
+)
+console.log(filterPokemons)
+
+/*
+    { id:4, name:"Charmander", type: { primary:"Fire", secondary:null } }
+    { id:5, name:"Charmeleon", type: { primary:"Fire", secondary:null } }
+    { id:6, name:"Charizard", type: { primary:"Fire", secondary:"Flying" } }
+*/
+```
+
+**[⬆ Back to the top](#javascript-tips)**
+
