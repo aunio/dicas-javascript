@@ -13,20 +13,20 @@
 **Bad:**
 
 ```javascript
-let x = 'abc'
+let x = "abc";
 
-if(x === 'abc' || x === 'def' || x === 'ghi' || x === 'jkl') {
-    // code
+if (x === "abc" || x === "def" || x === "ghi" || x === "jkl") {
+  // code
 }
 ```
 
 **Good:**
 
 ```javascript
-let x = 'abc'
+let x = "abc";
 
-if(['abc', 'def', 'ghi', 'jkl'].includes(x)) {
-    // code
+if (["abc", "def", "ghi", "jkl"].includes(x)) {
+  // code
 }
 ```
 
@@ -39,13 +39,13 @@ if(['abc', 'def', 'ghi', 'jkl'].includes(x)) {
 ```javascript
 let x = 20;
 
-if( x > 10 ) {
-    test = true
+if (x > 10) {
+  test = true;
 } else {
-    test = false
+  test = false;
 }
 
-console.log(test) //true
+console.log(test); //true
 ```
 
 **Good:**
@@ -54,12 +54,12 @@ console.log(test) //true
 let x = 20;
 
 // Option 1
-let test1 = (x > 10) ? true : false;
+let test1 = x > 10 ? true : false;
 console.log(test1); //true
 
 // Option 2
 let test2 = x > 10;
-console.log(test2) //true
+console.log(test2); //true
 ```
 
 **[⬆ Back to the top](#javascript-tips)**
@@ -69,30 +69,30 @@ console.log(test2) //true
 **Bad:**
 
 ```javascript
-const regex = /^([0-9]{4})[-](0[1-9]|1[0-2])[-](0[0-9]|1[0-9]|2[0-9]|3[0-1])/
-const date = new Date(2021, 0, 1)
-const [full, year, month, day] = regex.exec(date.toISOString())
+const regex = /^([0-9]{4})[-](0[1-9]|1[0-2])[-](0[0-9]|1[0-9]|2[0-9]|3[0-1])/;
+const date = new Date(2021, 0, 1);
+const [full, year, month, day] = regex.exec(date.toISOString());
 
-newDate = `${day}/${month}/${year}`
-console.log(newDate) // 01/01/2021
+newDate = `${day}/${month}/${year}`;
+console.log(newDate); // 01/01/2021
 ```
 
 **Good:**
 
 ```javascript
 const options = {
-    year: "numeric",
-    month: "long",
-    day: "numeric"
-}
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+};
 
-const date = new Date(2021, 0, 1)
+const date = new Date(2021, 0, 1);
 
-newDate1 = date.toLocaleDateString("pt-br", options)
-console.log(newDate1) // 1 de janeiro de 2021
+newDate1 = date.toLocaleDateString("pt-br", options);
+console.log(newDate1); // 1 de janeiro de 2021
 
-newDate2 = date.toLocaleDateString("pt-br", { ...options, month: "numeric"})
-console.log(newDate2) // 01/01/2021
+newDate2 = date.toLocaleDateString("pt-br", { ...options, month: "numeric" });
+console.log(newDate2); // 01/01/2021
 ```
 
 **[⬆ Back to the top](#javascript-tips)**
@@ -103,54 +103,53 @@ console.log(newDate2) // 01/01/2021
 
 ```javascript
 function identifyAnimal(animal) {
-    if( animal === "Dog" ) {
-        return "Pluto"
-    } else if ( animal === "Cat" ) {
-        return "Tom"
-    } else if ( animal === "Mouse" ) {
-        return "Jerry"
-    } else if( animal === "Duck" ) {
-        return "Donald"
-    }
+  if (animal === "Dog") {
+    return "Pluto";
+  } else if (animal === "Cat") {
+    return "Tom";
+  } else if (animal === "Mouse") {
+    return "Jerry";
+  } else if (animal === "Duck") {
+    return "Donald";
+  }
 }
 
-console.log(identifyAnimal("Dog")) // Pluto
+console.log(identifyAnimal("Dog")); // Pluto
 ```
 
 **Good:**
 
 ```javascript
 function identifyAnimal(animal) {
-    const animals = {
-        "Dog": "Pluto",
-        "Cat": "Tom",
-        "Mouse": "Jerry",
-        "Duck": "Donald"
-    }
+  const animals = {
+    Dog: "Pluto",
+    Cat: "Tom",
+    Mouse: "Jerry",
+    Duck: "Donald",
+  };
 
-    return animals[animal]
+  return animals[animal];
 }
 
-console.log(identifyAnimal("Dog")) // Pluto
+console.log(identifyAnimal("Dog")); // Pluto
 ```
 
 **[⬆ Back to the top](#javascript-tips)**
 
 ## **Array Order Alphabetically**
+
 Sorting strings with numbers and accented characters.
 
 ```javascript
 const movies = [
-    'Harry Potter',
-    'Senhor dos Anéis',
-    'Árvore da Vida',
-    'As Branquelas',
-    '8 Mile - Rua das Ilusões'
-]
+  "Harry Potter",
+  "Senhor dos Anéis",
+  "Árvore da Vida",
+  "As Branquelas",
+  "8 Mile - Rua das Ilusões",
+];
 
-console.log(
-    movies.sort(Intl.Collator().compare)
-)
+console.log(movies.sort(Intl.Collator().compare));
 
 /* [
     "8 Mile - Rua das Ilusões",
@@ -164,28 +163,29 @@ console.log(
 **[⬆ Back to the top](#javascript-tips)**
 
 ## **Foreach**
+
 Foreach Loop is a control flow statement for traversing items in a collection.
 
 ```javascript
 const pokemons = [
-    { id: 1, name: 'Bulbasaur', type: { primary: 'Grass', secondary: 'Poison' } },
-    { id: 2, name: 'Ivysaur', type: { primary: 'Grass', secondary: 'Poison' } },
-    { id: 3, name: 'Venusaur', type: { primary: 'Grass', secondary: 'Poison' } },
-    { id: 4, name: 'Charmander', type: { primary: 'Fire', secondary: null } },
-    { id: 5, name: 'Charmeleon', type: { primary: 'Fire', secondary: null } },
-    { id: 6, name: 'Charizard', type: { primary: 'Fire', secondary: 'Flying' } },
-    { id: 7, name: 'Squirtle', type: { primary: 'Water', secondary: null } },
-    { id: 8, name: 'Wartotle', type: { primary: 'Water', secondary: null } },
-    { id: 9, name: 'Blastoise', type: { primary: 'Water', secondary: null } },
-]
+  { id: 1, name: "Bulbasaur", type: { primary: "Grass", secondary: "Poison" } },
+  { id: 2, name: "Ivysaur", type: { primary: "Grass", secondary: "Poison" } },
+  { id: 3, name: "Venusaur", type: { primary: "Grass", secondary: "Poison" } },
+  { id: 4, name: "Charmander", type: { primary: "Fire", secondary: null } },
+  { id: 5, name: "Charmeleon", type: { primary: "Fire", secondary: null } },
+  { id: 6, name: "Charizard", type: { primary: "Fire", secondary: "Flying" } },
+  { id: 7, name: "Squirtle", type: { primary: "Water", secondary: null } },
+  { id: 8, name: "Wartotle", type: { primary: "Water", secondary: null } },
+  { id: 9, name: "Blastoise", type: { primary: "Water", secondary: null } },
+];
 ```
 
 **Bad:**
 
 ```javascript
 //forLoop
-for(let i = 0; i < pokemons.length; i++) {
-  console.log(pokemons[i])
+for (let i = 0; i < pokemons.length; i++) {
+  console.log(pokemons[i]);
 }
 
 /*
@@ -202,11 +202,12 @@ for(let i = 0; i < pokemons.length; i++) {
 ```
 
 **Good:**
+
 ```javascript
 //forEach
 pokemons.forEach((pokemon) => {
-  console.log(pokemon)
-})
+  console.log(pokemon);
+});
 
 /*
     { id:1, name:"Bulbasaur", type: { primary:"Grass", secondary:"Poison" } }
@@ -223,39 +224,32 @@ pokemons.forEach((pokemon) => {
 
 **[⬆ Back to the top](#javascript-tips)**
 
-//
-//
-//
-//
-//
-//
-//
-
 ## **Filter**
+
 The filter() method creater a new array with all the elements that pass the test implemented by the callback() function.
 
 ```javascript
 const pokemons = [
-    { id: 1, name: 'Bulbasaur', type: { primary: 'Grass', secondary: 'Poison' } },
-    { id: 2, name: 'Ivysaur', type: { primary: 'Grass', secondary: 'Poison' } },
-    { id: 3, name: 'Venusaur', type: { primary: 'Grass', secondary: 'Poison' } },
-    { id: 4, name: 'Charmander', type: { primary: 'Fire', secondary: null } },
-    { id: 5, name: 'Charmeleon', type: { primary: 'Fire', secondary: null } },
-    { id: 6, name: 'Charizard', type: { primary: 'Fire', secondary: 'Flying' } },
-    { id: 7, name: 'Squirtle', type: { primary: 'Water', secondary: null } },
-    { id: 8, name: 'Wartotle', type: { primary: 'Water', secondary: null } },
-    { id: 9, name: 'Blastoise', type: { primary: 'Water', secondary: null } },
-]
+  { id: 1, name: "Bulbasaur", type: { primary: "Grass", secondary: "Poison" } },
+  { id: 2, name: "Ivysaur", type: { primary: "Grass", secondary: "Poison" } },
+  { id: 3, name: "Venusaur", type: { primary: "Grass", secondary: "Poison" } },
+  { id: 4, name: "Charmander", type: { primary: "Fire", secondary: null } },
+  { id: 5, name: "Charmeleon", type: { primary: "Fire", secondary: null } },
+  { id: 6, name: "Charizard", type: { primary: "Fire", secondary: "Flying" } },
+  { id: 7, name: "Squirtle", type: { primary: "Water", secondary: null } },
+  { id: 8, name: "Wartotle", type: { primary: "Water", secondary: null } },
+  { id: 9, name: "Blastoise", type: { primary: "Water", secondary: null } },
+];
 ```
 
 **Bad:**
 
 ```javascript
 //forLoop
-let filterPokemons = []
-for(let i = 0; i < pokemons.length; i++) {
-  if(pokemons[i].type.primary === 'Fire') {
-    filterPokemons.push(pokemons[i])
+let filterPokemons = [];
+for (let i = 0; i < pokemons.length; i++) {
+  if (pokemons[i].type.primary === "Fire") {
+    filterPokemons.push(pokemons[i]);
   }
 }
 
@@ -267,12 +261,13 @@ for(let i = 0; i < pokemons.length; i++) {
 ```
 
 **Good:**
+
 ```javascript
 //filter()
 let filterPokemons = pokemons.filter(
-  pokemon => pokemon.type.primary === 'Fire'
-)
-console.log(filterPokemons)
+  (pokemon) => pokemon.type.primary === "Fire"
+);
+console.log(filterPokemons);
 
 /*
     { id:4, name:"Charmander", type: { primary:"Fire", secondary:null } }
@@ -282,4 +277,3 @@ console.log(filterPokemons)
 ```
 
 **[⬆ Back to the top](#javascript-tips)**
-
