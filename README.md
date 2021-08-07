@@ -277,3 +277,23 @@ console.log(filterPokemons);
 ```
 
 **[⬆ Back to the top](#javascript-tips)**
+
+## **Pipe**
+
+```javascript
+const plusTen = (number) => number + 10;
+const dividedByFive = (number) => number / 5;
+const multipliedByThree = (number) => number * 3;
+const minusTwo = (number) => number - 2;
+
+const combineOperations = (initValue, arrOfFuncs) =>
+  arrOfFuncs.reduce((acc, func) => func(acc), initValue);
+
+console.log(
+  combineOperations(5, [plusTen, dividedByFive, multipliedByThree, minusTwo])
+);
+
+// 7
+```
+
+**[⬆ Back to the top](#javascript-tips)**
