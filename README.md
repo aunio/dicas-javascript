@@ -7,6 +7,7 @@
 5. [Array Order Alphabetically](#array-order-alphabetically)
 6. [Foreach Loop](#foreach)
 7. [Filter](#filter)
+8. [Pipe](#pipe)
 
 ## **Multiple Conditions**
 
