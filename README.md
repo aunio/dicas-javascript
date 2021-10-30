@@ -8,7 +8,7 @@
 6. [Foreach Loop](#foreach)
 7. [Filter](#filter)
 8. [Pipe](#pipe)
-9. [Spread](#spread)
+9. [Spread](#pipe)
 
 ## **Multiple Conditions**
 
@@ -280,7 +280,7 @@ console.log(filterPokemons);
 
 **[⬆ Back to the top](#javascript-tips)**
 
-## **Spread**
+## **Pipe**
 
 ```javascript
 const plusTen = (number) => number + 10;
@@ -300,8 +300,7 @@ console.log(
 
 **[⬆ Back to the top](#javascript-tips)**
 
-## **Filter**
-
+## **Spread**
 
 ```javascript
 let arr = ['a', 'b', 'c']
