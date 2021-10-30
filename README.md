@@ -302,7 +302,7 @@ console.log(
 
 ## **Spread**
 
-Arrays Copy
+How to Copy an Array
 
 ```javascript
 let arr = ['a', 'b', 'c']
