@@ -302,6 +302,8 @@ console.log(
 
 ## **Spread**
 
+Arrays Copy
+
 ```javascript
 let arr = ['a', 'b', 'c']
 ```
