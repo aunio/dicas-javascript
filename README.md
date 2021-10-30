@@ -280,7 +280,7 @@ console.log(filterPokemons);
 
 **[⬆ Back to the top](#javascript-tips)**
 
-## **Pipe**
+## **Spread**
 
 ```javascript
 const plusTen = (number) => number + 10;
