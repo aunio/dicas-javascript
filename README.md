@@ -8,6 +8,7 @@
 6. [Foreach Loop](#foreach)
 7. [Filter](#filter)
 8. [Pipe](#pipe)
+9. [Spread](#spread)
 
 ## **Multiple Conditions**
 
@@ -295,6 +296,33 @@ console.log(
 );
 
 // 7
+```
+
+**[⬆ Back to the top](#javascript-tips)**
+
+## **Filter**
+
+
+```javascript
+let arr = ['a', 'b', 'c']
+```
+
+**Bad:**
+
+```javascript
+let arr2 = arr
+arr2.push('d')
+console.log(arr) // ['a', 'b', 'c', 'd']
+console.log(arr2) // ['a', 'b', 'c', 'd']
+```
+
+**Good:**
+
+```javascript
+let arr2 = [...arr]
+arr2.push('d')
+console.log(arr) // ['a', 'b', 'c']
+console.log(arr2) // ['a', 'b', 'c', 'd']
 ```
 
 **[⬆ Back to the top](#javascript-tips)**
