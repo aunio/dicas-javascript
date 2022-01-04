@@ -15,13 +15,13 @@
 **Bad:**
 
 ```javascript
-let personagem = "naruto";
+let ninja = "naruto";
 
 if (
-  personagem === "naruto" ||
-  personagem === "kakashi" ||
-  personagem === "minato" ||
-  personagem === "jiraiya"
+  ninja === "naruto" ||
+  ninja === "kakashi" ||
+  ninja === "minato" ||
+  ninja === "jiraiya"
 ) {
   // code
 }
@@ -30,9 +30,9 @@ if (
 **Good:**
 
 ```javascript
-let personagem = "naruto";
+let ninja = "naruto";
 
-if (["naruto", "kakashi", "minato", "jiraiya"].includes(personagem)) {
+if (["naruto", "kakashi", "minato", "jiraiya"].includes(ninja)) {
   // code
 }
 ```
