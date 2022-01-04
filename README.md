@@ -15,9 +15,14 @@
 **Bad:**
 
 ```javascript
-let x = "abc";
+let personagem = "naruto";
 
-if (x === "abc" || x === "def" || x === "ghi" || x === "jkl") {
+if (
+  personagem === "naruto" ||
+  personagem === "kakashi" ||
+  personagem === "minato" ||
+  personagem === "jiraiya"
+) {
   // code
 }
 ```
@@ -25,9 +30,9 @@ if (x === "abc" || x === "def" || x === "ghi" || x === "jkl") {
 **Good:**
 
 ```javascript
-let x = "abc";
+let personagem = "naruto";
 
-if (["abc", "def", "ghi", "jkl"].includes(x)) {
+if (["naruto", "kakashi", "minato", "jiraiya"].includes(personagem)) {
   // code
 }
 ```
@@ -305,25 +310,25 @@ console.log(
 How to Copy an Array
 
 ```javascript
-let arr = ['a', 'b', 'c']
+let arr = ["a", "b", "c"];
 ```
 
 **Bad:**
 
 ```javascript
-let arr2 = arr
-arr2.push('d')
-console.log(arr) // ['a', 'b', 'c', 'd']
-console.log(arr2) // ['a', 'b', 'c', 'd']
+let arr2 = arr;
+arr2.push("d");
+console.log(arr); // ['a', 'b', 'c', 'd']
+console.log(arr2); // ['a', 'b', 'c', 'd']
 ```
 
 **Good:**
 
 ```javascript
-let arr2 = [...arr]
-arr2.push('d')
-console.log(arr) // ['a', 'b', 'c']
-console.log(arr2) // ['a', 'b', 'c', 'd']
+let arr2 = [...arr];
+arr2.push("d");
+console.log(arr); // ['a', 'b', 'c']
+console.log(arr2); // ['a', 'b', 'c', 'd']
 ```
 
 **[⬆ Back to the top](#javascript-tips)**
