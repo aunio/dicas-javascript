@@ -80,7 +80,7 @@ const regex = /^([0-9]{4})[-](0[1-9]|1[0-2])[-](0[0-9]|1[0-9]|2[0-9]|3[0-1])/;
 const date = new Date(2021, 0, 1);
 const [full, year, month, day] = regex.exec(date.toISOString());
 
-newDate = `${day}/${month}/${year}`;
+let newDate = `${day}/${month}/${year}`;
 console.log(newDate); // 01/01/2021
 ```
 
@@ -95,10 +95,13 @@ const options = {
 
 const date = new Date(2021, 0, 1);
 
-newDate1 = date.toLocaleDateString("pt-br", options);
+let newDate1 = date.toLocaleDateString("pt-br", options);
 console.log(newDate1); // 1 de janeiro de 2021
 
-newDate2 = date.toLocaleDateString("pt-br", { ...options, month: "numeric" });
+let newDate2 = date.toLocaleDateString("pt-br", {
+  ...options,
+  month: "numeric",
+});
 console.log(newDate2); // 01/01/2021
 ```
 
