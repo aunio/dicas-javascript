@@ -8,7 +8,7 @@
 6. [Foreach Loop](#foreach)
 7. [Filter](#filter)
 8. [Pipe](#pipe)
-9. [Spread](#pipe)
+9. [Spread](#spread)
 
 ## **Multiple Conditions**
 
