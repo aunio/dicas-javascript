@@ -9,6 +9,7 @@
 7. [Filter](#filter)
 8. [Pipe](#pipe)
 9. [Spread](#spread)
+10. [Using URL Instead of String](#using-url-instead-of-string)
 
 ## **Multiple Conditions**
 
@@ -332,6 +333,32 @@ let arr2 = [...arr];
 arr2.push("d");
 console.log(arr); // ['a', 'b', 'c']
 console.log(arr2); // ['a', 'b', 'c', 'd']
+```
+
+**[⬆ Back to the top](#javascript-tips)**
+
+## **Using URL Instead of String**
+
+URL is specifically made to deal with URLs. No need to manually parse strings to extract or even change parts of it.
+A URL makes it easy to access specific parts of a URL, and to modify thos parts.
+
+**Bad:**
+
+```javascript
+const url = "https://mysite.com/path/to/resource?query=param";
+```
+
+**Good:**
+
+```javascript
+const url = new URL("https://mysite.com/path/to/resource?query=param");
+
+url.host; // mysite.com
+url.pathname; /// /path/to/resource
+
+// You can even modify the url
+url.pathname = "other/path/to/resource";
+url; // https://mysite.com/other/path/to/resource?query=param
 ```
 
 **[⬆ Back to the top](#javascript-tips)**
