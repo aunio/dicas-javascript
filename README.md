@@ -354,7 +354,7 @@ const url = "https://mysite.com/path/to/resource?query=param";
 const url = new URL("https://mysite.com/path/to/resource?query=param");
 
 url.host; // mysite.com
-url.pathname; /// /path/to/resource
+url.pathname; // /path/to/resource
 url.searchParams.get("query"); // param
 
 // You can even modify the url
