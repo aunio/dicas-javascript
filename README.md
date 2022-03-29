@@ -339,13 +339,13 @@ console.log(arr2); // ['a', 'b', 'c', 'd']
 
 ## **Using URL Instead of String**
 
-URL is specifically made to deal with URLs. No need to manually parse strings to extract or even change parts of it.
-A URL makes it easy to access specific parts of a URL, and to modify thos parts.
+URL is specifically made to deal with URLs. No need to manually parse strings to extract or even change parts of it. A URL makes it easy to access specific parts of a URL, and to modify those parts.
 
 **Bad:**
 
 ```javascript
 const url = "https://mysite.com/path/to/resource?query=param";
+// How to access URL parts?
 ```
 
 **Good:**
@@ -355,9 +355,12 @@ const url = new URL("https://mysite.com/path/to/resource?query=param");
 
 url.host; // mysite.com
 url.pathname; /// /path/to/resource
+url.searchParams.get("query"); // param
 
 // You can even modify the url
 url.pathname = "other/path/to/resource";
+
+// And changes are immediately reflected
 url; // https://mysite.com/other/path/to/resource?query=param
 ```
 
