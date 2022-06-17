@@ -369,8 +369,6 @@ url; // https://mysite.com/other/path/to/resource?query=param
 
 ## **Object Literals**
 
-TEXTO TEXTO
-
 **Bad:**
 
 ```javascript
