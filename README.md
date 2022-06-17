@@ -10,6 +10,7 @@
 8. [Pipe](#pipe)
 9. [Spread](#spread)
 10. [Using URL Instead of String](#using-url-instead-of-string)
+11. [Object Literals](#object-literals)
 
 ## **Multiple Conditions**
 
@@ -362,6 +363,63 @@ url.pathname = "other/path/to/resource";
 
 // And changes are immediately reflected
 url; // https://mysite.com/other/path/to/resource?query=param
+```
+
+**[⬆ Back to the top](#javascript-tips)**
+
+## **Object Literals**
+
+TEXTO TEXTO
+
+**Bad:**
+
+```javascript
+const dayOfTheWeek = 1;
+
+switch (dayOfTheWeek) {
+  case 1:
+    selectedDay = "Monday";
+    break;
+  case 2:
+    selectedDay = "Tuesday";
+    break;
+  case 3:
+    selectedDay = "Wednesday";
+    break;
+  case 4:
+    selectedDay = "Thursday";
+    break;
+  case 5:
+    selectedDay = "Friday";
+    break;
+  case 6:
+    selectedDay = "Saturday";
+    break;
+  default:
+    selectedDay = "Sunday";
+}
+
+console.log(selectedDay); //Monday
+```
+
+**Good:**
+
+```javascript
+const dayOfTheWeek = 2;
+
+const daysOfTheWeek = {
+  0: "Sunday",
+  1: "Monday",
+  2: "Tuesday",
+  3: "Wednesday",
+  4: "Thursday",
+  5: "Friday",
+  6: "Saturday",
+};
+
+const selectedDay = daysOfTheWeek[dayOfTheWeek];
+
+console.log(selectedDay); // Tuesday
 ```
 
 **[⬆ Back to the top](#javascript-tips)**
