@@ -454,7 +454,6 @@ const strawHatPiratesShip = {
   },
 };
 
-// Using Deep clone
 const copiedStrawHatPiratesShip = structuredClone(strawHatPiratesShip);
 
 copiedStrawHatPiratesShip.name = "Thousand Sunny";
