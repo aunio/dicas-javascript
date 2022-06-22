@@ -464,10 +464,10 @@ console.log(strawHatPiratesShip);
 
 /*
   {
-    name: "Boat"
+    name: "Going Merry"
     debut: {
-      chapter: 1,
-      episode: 1,
+      chapter: 41,
+      episode: 17,
     },
   }
 */
@@ -476,10 +476,10 @@ console.log(copiedStrawHatPiratesShip);
 
 /*
   {
-    name: "Going Merry"
+    name: "Thousand Sunny"
     debut: {
-      chapter: 41,
-      episode: 17,
+      chapter: 436,
+      episode: 321,
     },
   }
 */
