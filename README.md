@@ -11,6 +11,7 @@
 9. [Spread](#spread)
 10. [Using URL Instead of String](#using-url-instead-of-string)
 11. [Object Literals](#object-literals)
+12. [Promise](#promise)
 
 ## **Multiple Conditions**
 
@@ -418,6 +419,23 @@ const daysOfTheWeek = {
 const selectedDay = daysOfTheWeek[dayOfTheWeek];
 
 console.log(selectedDay); // Tuesday
+```
+
+**[⬆ Back to the top](#javascript-tips)**
+
+## **Promise**
+
+**Bad:**
+
+```javascript
+const users await getUser();
+const products await getProducts();
+```
+
+**Good:**
+
+```javascript
+const [users, products] = await Promise.all([getUsers(), getProducts()]);
 ```
 
 **[⬆ Back to the top](#javascript-tips)**
