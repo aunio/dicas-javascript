@@ -505,7 +505,6 @@ const strawHatPirates = [
   },
 ];
 
-// Using Deep clone
 const copiedStrawHatPirates = structuredClone(strawHatPirates);
 
 copiedStrawHatPirates[0].name = "Nami";
