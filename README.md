@@ -12,6 +12,7 @@
 10. [Using URL Instead of String](#using-url-instead-of-string)
 11. [Object Literals](#object-literals)
 12. [Promise](#promise)
+13. [Deep Clone](#deep-clone)
 
 ## **Multiple Conditions**
 
@@ -436,6 +437,71 @@ const products await getProducts();
 
 ```javascript
 const [users, products] = await Promise.all([getUsers(), getProducts()]);
+```
+
+**[⬆ Back to the top](#javascript-tips)**
+
+## **Deep Clone and Shallow Clone**
+
+```javascript
+const strawHatPirates = [
+  {
+    name: "Monkey D. Luffy",
+    birthday: {
+      day: 5,
+      month: "May",
+    },
+  },
+  {
+    name: "Roronoa Zoro",
+    birthday: {
+      day: 11,
+      month: "November",
+    },
+  },
+];
+
+// Using Deep clone
+const copiedStrawHatPirates = structuredClone(strawHatPirates);
+
+copiedStrawHatPirates[0].name = "Nami";
+copiedStrawHatPirates[0].birthday.day = 3;
+copiedStrawHatPirates[0].birthday.month = "July";
+copiedStrawHatPirates[1].name = "Usopp";
+copiedStrawHatPirates[1].birthday.day = 1;
+copiedStrawHatPirates[1].birthday.month = "April";
+
+console.log(strawHatPirates);
+
+// [{
+//   name: "Monkey D. Luffy",
+//   birthday: {
+//     day: 5,
+//     month: "May"
+//   },
+// }, {
+//   name: "Roronoa Zoro",
+//   birthday: {
+//     day: 11,
+//     month: "November"
+//   },
+// }]
+
+console.log(copiedStrawHatPirates);
+
+// [{
+//   name: "Nami"
+//   birthday: {
+//     day: 3,
+//     month: "July"
+//   },
+// }, {
+//   name: "Usopp"
+//   birthday: {
+//     day: 1,
+//     month: "April"
+//   },
+// }]
 ```
 
 **[⬆ Back to the top](#javascript-tips)**
