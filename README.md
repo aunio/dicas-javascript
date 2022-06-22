@@ -165,13 +165,15 @@ const movies = [
 
 console.log(movies.sort(Intl.Collator().compare));
 
-/* [
+/* 
+  [
     "8 Mile - Rua das Ilusões",
     "Árvore da Vida",
     "As Branquelas",
     "Harry Potter",
     "Senhor dos Anéis"
-] */
+  ]
+*/
 ```
 
 **[⬆ Back to the top](#javascript-tips)**
