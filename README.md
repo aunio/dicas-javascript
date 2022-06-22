@@ -12,7 +12,7 @@
 10. [Using URL Instead of String](#using-url-instead-of-string)
 11. [Object Literals](#object-literals)
 12. [Promise](#promise)
-13. [Deep Clone and Shallow Clone](#deep-clone-and-shallow-clone)
+13. [Deep Clone](#deep-clone)
 
 ## **Multiple Conditions**
 
@@ -441,7 +441,52 @@ const [users, products] = await Promise.all([getUsers(), getProducts()]);
 
 **[⬆ Back to the top](#javascript-tips)**
 
-## **Deep Clone and Shallow Clone**
+## **Deep Clone**
+
+**Object:**
+
+```javascript
+const strawHatPiratesShip = {
+  name: "Going Merry",
+  debut: {
+    chapter: 41,
+    episode: 17,
+  },
+};
+
+// Using Deep clone
+const copiedStrawHatPiratesShip = structuredClone(strawHatPiratesShip);
+
+copiedStrawHatPiratesShip.name = "Thousand Sunny";
+copiedStrawHatPiratesShip.debut.chapter = 436;
+copiedStrawHatPiratesShip.debut.episode = 321;
+
+console.log(strawHatPiratesShip);
+
+/*
+  {
+    name: "Boat"
+    debut: {
+      chapter: 1,
+      episode: 1,
+    },
+  }
+*/
+
+console.log(copiedStrawHatPiratesShip);
+
+/*
+  {
+    name: "Going Merry"
+    debut: {
+      chapter: 41,
+      episode: 17,
+    },
+  }
+*/
+```
+
+**Array:**
 
 ```javascript
 const strawHatPirates = [
@@ -473,35 +518,39 @@ copiedStrawHatPirates[1].birthday.month = "April";
 
 console.log(strawHatPirates);
 
-// [{
-//   name: "Monkey D. Luffy",
-//   birthday: {
-//     day: 5,
-//     month: "May"
-//   },
-// }, {
-//   name: "Roronoa Zoro",
-//   birthday: {
-//     day: 11,
-//     month: "November"
-//   },
-// }]
+/*
+  [{
+    name: "Monkey D. Luffy",
+    birthday: {
+      day: 5,
+      month: "May"
+    },
+  }, {
+    name: "Roronoa Zoro",
+    birthday: {
+      day: 11,
+      month: "November"
+    },
+  }]
+*/
 
 console.log(copiedStrawHatPirates);
 
-// [{
-//   name: "Nami"
-//   birthday: {
-//     day: 3,
-//     month: "July"
-//   },
-// }, {
-//   name: "Usopp"
-//   birthday: {
-//     day: 1,
-//     month: "April"
-//   },
-// }]
+/*
+  [{
+    name: "Nami"
+    birthday: {
+      day: 3,
+      month: "July"
+    },
+  }, {
+    name: "Usopp"
+    birthday: {
+      day: 1,
+      month: "April"
+    },
+  }]
+*/
 ```
 
 **[⬆ Back to the top](#javascript-tips)**
