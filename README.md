@@ -12,7 +12,7 @@
 10. [Using URL Instead of String](#using-url-instead-of-string)
 11. [Object Literals](#object-literals)
 12. [Promise](#promise)
-13. [Deep Clone](#deep-clone)
+13. [Deep Clone and Shallow Clone](#deep-clone-and-shallow-clone)
 
 ## **Multiple Conditions**
 
