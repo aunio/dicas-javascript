@@ -431,8 +431,8 @@ console.log(selectedDay); // Tuesday
 **Bad:**
 
 ```javascript
-const users await getUser();
-const products await getProducts();
+const users = await getUser();
+const products = await getProducts();
 ```
 
 **Good:**
