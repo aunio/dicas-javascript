@@ -13,6 +13,7 @@
 11. [Object Literals](#object-literals)
 12. [Promise](#promise)
 13. [Deep Clone](#deep-clone)
+14. [Immutable Reverse](#immutable-reverse)
 
 ## **Multiple Conditions**
 
@@ -551,6 +552,16 @@ console.log(copiedStrawHatPirates);
     },
   }]
 */
+```
+
+**[⬆ Back to the top](#javascript-tips)**
+
+## **Immutable Reverse**
+
+```javascript
+const numbers = [1, 2, 3];
+numbers.toReversed(); // => [3, 2, 1]
+numbers; // => [1, 2, 3]
 ```
 
 **[⬆ Back to the top](#javascript-tips)**
