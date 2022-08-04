@@ -15,6 +15,7 @@
 13. [Deep Clone](#deep-clone)
 14. [Immutable Reverse](#immutable-reverse)
 15. [Immutable Sort](#immutable-sort)
+16. [Immutable Spliced](#immutable-spliced)
 
 ## **Multiple Conditions**
 
@@ -573,6 +574,16 @@ sequentialNumbers; // [1, 2, 3]
 const outOfOrder = new Uint8Array([3, 1, 2]);
 outOfOrder.toSorted(); // Uint8Array [1, 2, 3]
 outOfOrder; // Uint8Array [3, 1, 2]
+```
+
+**[⬆ Back to the top](#javascript-tips)**
+
+## **Immutable Splice**
+
+```javascript
+const numbers = [1, 2, 3];
+numbers.toSpliced(2, 2); // [3]
+numbers; // numbers [1, 2, 3]
 ```
 
 **[⬆ Back to the top](#javascript-tips)**
