@@ -559,9 +559,9 @@ console.log(copiedStrawHatPirates);
 ## **Immutable Reverse**
 
 ```javascript
-const numbers = [1, 2, 3];
-numbers.toReversed(); // [3, 2, 1]
-numbers; // [1, 2, 3]
+const sequentialNumbers = [1, 2, 3];
+sequentialNumbers.toReversed(); // [3, 2, 1]
+sequentialNumbers; // [1, 2, 3]
 ```
 
 **[⬆ Back to the top](#javascript-tips)**
