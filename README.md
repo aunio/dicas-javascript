@@ -563,7 +563,7 @@ console.log(copiedStrawHatPirates);
 ```javascript
 const sequentialNumbers = [1, 2, 3];
 sequentialNumbers.toReversed(); // [3, 2, 1]
-sequentialNumbers; // [1, 2, 3]
+console.log(sequentialNumbers); // [1, 2, 3]
 ```
 
 **[⬆ Back to the top](#javascript-tips)**
@@ -573,7 +573,7 @@ sequentialNumbers; // [1, 2, 3]
 ```javascript
 const outOfOrder = new Uint8Array([3, 1, 2]);
 outOfOrder.toSorted(); // Uint8Array [1, 2, 3]
-outOfOrder; // Uint8Array [3, 1, 2]
+console.log(outOfOrder); // Uint8Array [3, 1, 2]
 ```
 
 **[⬆ Back to the top](#javascript-tips)**
@@ -583,7 +583,7 @@ outOfOrder; // Uint8Array [3, 1, 2]
 ```javascript
 const numbers = [1, 2, 3];
 numbers.toSpliced(2, 2); // [3]
-numbers; // numbers [1, 2, 3]
+console.log(numbers); // numbers [1, 2, 3]
 ```
 
 **[⬆ Back to the top](#javascript-tips)**
