@@ -15,7 +15,8 @@
 13. [Deep Clone](#deep-clone)
 14. [Immutable Reverse](#immutable-reverse)
 15. [Immutable Sort](#immutable-sort)
-16. [Immutable Spliced](#immutable-spliced)
+16. [Immutable Splice](#immutable-splice)
+17. [Group and GroupMap](#group-and-groupmap)
 
 ## **Multiple Conditions**
 
@@ -584,6 +585,16 @@ console.log(outOfOrder); // Uint8Array [3, 1, 2]
 const numbers = [1, 2, 3];
 numbers.toSpliced(2, 2); // [3]
 console.log(numbers); // numbers [1, 2, 3]
+```
+
+**[⬆ Back to the top](#javascript-tips)**
+
+## **Group and GroupMap**
+
+```javascript
+const numbers = [1, 2, 3, 4, 5, 6];
+numbers.group((num) => (num % 2 === 0 ? "Even" : "Odd"));
+console.log(numbers);
 ```
 
 **[⬆ Back to the top](#javascript-tips)**
