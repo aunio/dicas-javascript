@@ -595,6 +595,10 @@ console.log(numbers); // numbers [1, 2, 3]
 const numbers = [1, 2, 3, 4, 5, 6];
 numbers.group((num) => (num % 2 === 0 ? "Even" : "Odd"));
 console.log(numbers);
+// {
+//   Odd: [1, 3, 5],
+//   Even: [2, 4, 6]
+// }
 ```
 
 **[⬆ Back to the top](#javascript-tips)**
