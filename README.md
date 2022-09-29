@@ -17,6 +17,7 @@
 15. [Immutable Sort](#immutable-sort)
 16. [Immutable Splice](#immutable-splice)
 17. [Group and GroupMap](#group-and-groupmap)
+18. [Number Format](#number-format)
 
 ## **Multiple Conditions**
 
@@ -601,6 +602,33 @@ console.log(numbers);
     Even: [2, 4, 6]
    }
 */
+```
+
+**[⬆ Back to the top](#javascript-tips)**
+
+## **Number Format**
+
+```javascript
+const number = 12345;
+
+const euro = new Intl.NumberFormat("de-DE", {
+  style: "currency",
+  currency: "EUR",
+}).format(number);
+console.log(numberEuro); // 12.345,00 €
+
+const dollar = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+  currencyDisplay: "name",
+}).format(number);
+console.log(numberDollar); // 12,345.00 US dollars
+
+const liter = new Intl.NumberFormat("en-US", {
+  style: "unit",
+  unit: "liter",
+  unitDisplay: "long",
+}).format(number); // 12,345 liters
 ```
 
 **[⬆ Back to the top](#javascript-tips)**
