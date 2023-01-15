@@ -1,81 +1,48 @@
 # javascript-tips
 
-1. [Multiple Conditions](#multiple-conditions)
-2. [Ternary Operator](#ternary-operator)
-3. [Date](#date)
-4. [If Validation](#if-validation)
-5. [Array Order Alphabetically](#array-order-alphabetically)
-6. [Foreach Loop](#foreach)
-7. [Filter](#filter)
-8. [Pipe](#pipe)
-9. [Spread](#spread)
-10. [Using URL Instead of String](#using-url-instead-of-string)
-11. [Object Literals](#object-literals)
-12. [Promise](#promise)
+05. [Array Order Alphabetically](#array-order-alphabetically)
+03. [Date](#date)
 13. [Deep Clone](#deep-clone)
+07. [Filter](#filter)
+06. [Foreach Loop](#foreach)
+17. [Group and GroupMap](#group-and-groupmap)
+04. [If Validation](#if-validation)
 14. [Immutable Reverse](#immutable-reverse)
 15. [Immutable Sort](#immutable-sort)
 16. [Immutable Splice](#immutable-splice)
-17. [Group and GroupMap](#group-and-groupmap)
+01. [Multiple Conditions](#multiple-conditions)
 18. [Number Format](#number-format)
+11. [Object Literals](#object-literals)
+08. [Pipe](#pipe)
+12. [Promise](#promise)
+09. [Spread](#spread)
+02. [Ternary Operator](#ternary-operator)
+10. [Using URL Instead of String](#using-url-instead-of-string)
 
-## **Multiple Conditions**
+## **Array Order Alphabetically**
 
-**Bad:**
-
-```javascript
-let shinobi = "Naruto";
-
-if (
-  shinobi === "Naruto" ||
-  shinobi === "Kakashi" ||
-  shinobi === "Minato" ||
-  shinobi === "Jiraiya"
-) {
-  // code
-}
-```
-
-**Good:**
+Sorting strings with numbers and accented characters.
 
 ```javascript
-let shinobi = "Naruto";
+const movies = [
+  "Harry Potter",
+  "Senhor dos Anéis",
+  "Árvore da Vida",
+  "As Branquelas",
+  "8 Mile - Rua das Ilusões",
+];
 
-if (["Naruto", "Kakashi", "Minato", "Jiraiya"].includes(shinobi)) {
-  // code
-}
-```
+console.log(movies.sort(Intl.Collator().compare));
 
-**[⬆ Back to the top](#javascript-tips)**
-
-## **Ternary Operator**
-
-**Bad:**
-
-```javascript
-let x = 20;
-
-if (x > 10) {
-  test = true;
-} else {
-  test = false;
-}
-
-console.log(test); //true
-```
-
-**Good:**
-
-```javascript
-let x = 20;
-
-// Option 1
-let test1 = x > 10 ? true : false;
-console.log(test1); //true
-
-// Option 2
-let test2 = x > 10;
-console.log(test2); //true
+/* 
+  [
+    "8 Mile - Rua das Ilusões",
+    "Árvore da Vida",
+    "As Branquelas",
+    "Harry Potter",
+    "Senhor dos Anéis"
+  ]
+*/
 ```
 
 **[⬆ Back to the top](#javascript-tips)**
@@ -112,338 +79,6 @@ let newDate2 = date.toLocaleDateString("pt-br", {
   month: "numeric",
 });
 console.log(newDate2); // 01/01/2021
-```
-
-**[⬆ Back to the top](#javascript-tips)**
-
-## **If Validation**
-
-**Bad:**
-
-```javascript
-function identifyAnimal(animal) {
-  if (animal === "Dog") {
-    return "Pluto";
-  } else if (animal === "Cat") {
-    return "Tom";
-  } else if (animal === "Mouse") {
-    return "Jerry";
-  } else if (animal === "Duck") {
-    return "Donald";
-  }
-}
-
-console.log(identifyAnimal("Dog")); // Pluto
-```
-
-**Good:**
-
-```javascript
-function identifyAnimal(animal) {
-  const animals = {
-    Dog: "Pluto",
-    Cat: "Tom",
-    Mouse: "Jerry",
-    Duck: "Donald",
-  };
-
-  return animals[animal];
-}
-
-console.log(identifyAnimal("Dog")); // Pluto
-```
-
-**[⬆ Back to the top](#javascript-tips)**
-
-## **Array Order Alphabetically**
-
-Sorting strings with numbers and accented characters.
-
-```javascript
-const movies = [
-  "Harry Potter",
-  "Senhor dos Anéis",
-  "Árvore da Vida",
-  "As Branquelas",
-  "8 Mile - Rua das Ilusões",
-];
-
-console.log(movies.sort(Intl.Collator().compare));
-
-/* 
-  [
-    "8 Mile - Rua das Ilusões",
-    "Árvore da Vida",
-    "As Branquelas",
-    "Harry Potter",
-    "Senhor dos Anéis"
-  ]
-*/
-```
-
-**[⬆ Back to the top](#javascript-tips)**
-
-## **Foreach**
-
-Foreach Loop is a control flow statement for traversing items in a collection.
-
-```javascript
-const pokemons = [
-  { id: 1, name: "Bulbasaur", type: { primary: "Grass", secondary: "Poison" } },
-  { id: 2, name: "Ivysaur", type: { primary: "Grass", secondary: "Poison" } },
-  { id: 3, name: "Venusaur", type: { primary: "Grass", secondary: "Poison" } },
-  { id: 4, name: "Charmander", type: { primary: "Fire", secondary: null } },
-  { id: 5, name: "Charmeleon", type: { primary: "Fire", secondary: null } },
-  { id: 6, name: "Charizard", type: { primary: "Fire", secondary: "Flying" } },
-  { id: 7, name: "Squirtle", type: { primary: "Water", secondary: null } },
-  { id: 8, name: "Wartotle", type: { primary: "Water", secondary: null } },
-  { id: 9, name: "Blastoise", type: { primary: "Water", secondary: null } },
-];
-```
-
-**Bad:**
-
-```javascript
-//forLoop
-for (let i = 0; i < pokemons.length; i++) {
-  console.log(pokemons[i]);
-}
-
-/*
-    { id:1, name:"Bulbasaur", type: { primary:"Grass", secondary:"Poison" } }
-    { id:2, name:"Ivysaur", type: { primary:"Grass", secondary:"Poison" } }
-    { id:3, name:"Venusaur", type: { primary:"Grass", secondary:"Poison" } }
-    { id:4, name:"Charmander", type: { primary:"Fire", secondary:null } }
-    { id:5, name:"Charmeleon", type: { primary:"Fire", secondary:null } }
-    { id:6, name:"Charizard", type: { primary:"Fire", secondary:"Flying" } }
-    { id:7, name:"Squirtle", type: { primary:"Water", secondary:null } }
-    { id:8, name:"Wartotle", type: { primary:"Water", secondary:null } }
-    { id:9, name:"Blastoise", type: { primary:"Water", secondary:null } }
-*/
-```
-
-**Good:**
-
-```javascript
-//forEach
-pokemons.forEach((pokemon) => {
-  console.log(pokemon);
-});
-
-/*
-    { id:1, name:"Bulbasaur", type: { primary:"Grass", secondary:"Poison" } }
-    { id:2, name:"Ivysaur", type: { primary:"Grass", secondary:"Poison" } }
-    { id:3, name:"Venusaur", type: { primary:"Grass", secondary:"Poison" } }
-    { id:4, name:"Charmander", type: { primary:"Fire", secondary:null } }
-    { id:5, name:"Charmeleon", type: { primary:"Fire", secondary:null } }
-    { id:6, name:"Charizard", type: { primary:"Fire", secondary:"Flying" } }
-    { id:7, name:"Squirtle", type: { primary:"Water", secondary:null } }
-    { id:8, name:"Wartotle", type: { primary:"Water", secondary:null } }
-    { id:9, name:"Blastoise", type: { primary:"Water", secondary:null } }
-*/
-```
-
-**[⬆ Back to the top](#javascript-tips)**
-
-## **Filter**
-
-The filter() method creater a new array with all the elements that pass the test implemented by the callback() function.
-
-```javascript
-const pokemons = [
-  { id: 1, name: "Bulbasaur", type: { primary: "Grass", secondary: "Poison" } },
-  { id: 2, name: "Ivysaur", type: { primary: "Grass", secondary: "Poison" } },
-  { id: 3, name: "Venusaur", type: { primary: "Grass", secondary: "Poison" } },
-  { id: 4, name: "Charmander", type: { primary: "Fire", secondary: null } },
-  { id: 5, name: "Charmeleon", type: { primary: "Fire", secondary: null } },
-  { id: 6, name: "Charizard", type: { primary: "Fire", secondary: "Flying" } },
-  { id: 7, name: "Squirtle", type: { primary: "Water", secondary: null } },
-  { id: 8, name: "Wartotle", type: { primary: "Water", secondary: null } },
-  { id: 9, name: "Blastoise", type: { primary: "Water", secondary: null } },
-];
-```
-
-**Bad:**
-
-```javascript
-//forLoop
-let filterPokemons = [];
-for (let i = 0; i < pokemons.length; i++) {
-  if (pokemons[i].type.primary === "Fire") {
-    filterPokemons.push(pokemons[i]);
-  }
-}
-
-/*
-    { id:4, name:"Charmander", type: { primary:"Fire", secondary:null } }
-    { id:5, name:"Charmeleon", type: { primary:"Fire", secondary:null } }
-    { id:6, name:"Charizard", type: { primary:"Fire", secondary:"Flying" } }
-*/
-```
-
-**Good:**
-
-```javascript
-//filter()
-let filterPokemons = pokemons.filter(
-  (pokemon) => pokemon.type.primary === "Fire"
-);
-console.log(filterPokemons);
-
-/*
-    { id:4, name:"Charmander", type: { primary:"Fire", secondary:null } }
-    { id:5, name:"Charmeleon", type: { primary:"Fire", secondary:null } }
-    { id:6, name:"Charizard", type: { primary:"Fire", secondary:"Flying" } }
-*/
-```
-
-**[⬆ Back to the top](#javascript-tips)**
-
-## **Pipe**
-
-```javascript
-const plusTen = (number) => number + 10;
-const dividedByFive = (number) => number / 5;
-const multipliedByThree = (number) => number * 3;
-const minusTwo = (number) => number - 2;
-
-const combineOperations = (initValue, arrOfFuncs) =>
-  arrOfFuncs.reduce((acc, func) => func(acc), initValue);
-
-console.log(
-  combineOperations(5, [plusTen, dividedByFive, multipliedByThree, minusTwo])
-);
-
-// 7
-```
-
-**[⬆ Back to the top](#javascript-tips)**
-
-## **Spread**
-
-How to Copy an Array
-
-```javascript
-let arr = ["a", "b", "c"];
-```
-
-**Bad:**
-
-```javascript
-let arr2 = arr;
-arr2.push("d");
-console.log(arr); // ['a', 'b', 'c', 'd']
-console.log(arr2); // ['a', 'b', 'c', 'd']
-```
-
-**Good:**
-
-```javascript
-let arr2 = [...arr];
-arr2.push("d");
-console.log(arr); // ['a', 'b', 'c']
-console.log(arr2); // ['a', 'b', 'c', 'd']
-```
-
-**[⬆ Back to the top](#javascript-tips)**
-
-## **Using URL Instead of String**
-
-URL is specifically made to deal with URLs. No need to manually parse strings to extract or even change parts of it. A URL makes it easy to access specific parts of a URL, and to modify those parts.
-
-**Bad:**
-
-```javascript
-const url = "https://mysite.com/path/to/resource?query=param";
-// How to access URL parts?
-```
-
-**Good:**
-
-```javascript
-const url = new URL("https://mysite.com/path/to/resource?query=param");
-
-url.host; // mysite.com
-url.pathname; // /path/to/resource
-url.searchParams.get("query"); // param
-
-// You can even modify the url
-url.pathname = "other/path/to/resource";
-
-// And changes are immediately reflected
-url; // https://mysite.com/other/path/to/resource?query=param
-```
-
-**[⬆ Back to the top](#javascript-tips)**
-
-## **Object Literals**
-
-**Bad:**
-
-```javascript
-const dayOfTheWeek = 1;
-
-switch (dayOfTheWeek) {
-  case 1:
-    selectedDay = "Monday";
-    break;
-  case 2:
-    selectedDay = "Tuesday";
-    break;
-  case 3:
-    selectedDay = "Wednesday";
-    break;
-  case 4:
-    selectedDay = "Thursday";
-    break;
-  case 5:
-    selectedDay = "Friday";
-    break;
-  case 6:
-    selectedDay = "Saturday";
-    break;
-  default:
-    selectedDay = "Sunday";
-}
-
-console.log(selectedDay); //Monday
-```
-
-**Good:**
-
-```javascript
-const dayOfTheWeek = 2;
-
-const daysOfTheWeek = {
-  0: "Sunday",
-  1: "Monday",
-  2: "Tuesday",
-  3: "Wednesday",
-  4: "Thursday",
-  5: "Friday",
-  6: "Saturday",
-};
-
-const selectedDay = daysOfTheWeek[dayOfTheWeek];
-
-console.log(selectedDay); // Tuesday
-```
-
-**[⬆ Back to the top](#javascript-tips)**
-
-## **Promise**
-
-**Bad:**
-
-```javascript
-const users = await getUser();
-const products = await getProducts();
-```
-
-**Good:**
-
-```javascript
-const [users, products] = await Promise.all([getUsers(), getProducts()]);
 ```
 
 **[⬆ Back to the top](#javascript-tips)**
@@ -560,6 +195,177 @@ console.log(copiedStrawHatPirates);
 
 **[⬆ Back to the top](#javascript-tips)**
 
+## **Filter**
+
+The filter() method creater a new array with all the elements that pass the test implemented by the callback() function.
+
+```javascript
+const pokemons = [
+  { id: 1, name: "Bulbasaur", type: { primary: "Grass", secondary: "Poison" } },
+  { id: 2, name: "Ivysaur", type: { primary: "Grass", secondary: "Poison" } },
+  { id: 3, name: "Venusaur", type: { primary: "Grass", secondary: "Poison" } },
+  { id: 4, name: "Charmander", type: { primary: "Fire", secondary: null } },
+  { id: 5, name: "Charmeleon", type: { primary: "Fire", secondary: null } },
+  { id: 6, name: "Charizard", type: { primary: "Fire", secondary: "Flying" } },
+  { id: 7, name: "Squirtle", type: { primary: "Water", secondary: null } },
+  { id: 8, name: "Wartotle", type: { primary: "Water", secondary: null } },
+  { id: 9, name: "Blastoise", type: { primary: "Water", secondary: null } },
+];
+```
+
+**Bad:**
+
+```javascript
+//forLoop
+let filterPokemons = [];
+for (let i = 0; i < pokemons.length; i++) {
+  if (pokemons[i].type.primary === "Fire") {
+    filterPokemons.push(pokemons[i]);
+  }
+}
+
+/*
+    { id:4, name:"Charmander", type: { primary:"Fire", secondary:null } }
+    { id:5, name:"Charmeleon", type: { primary:"Fire", secondary:null } }
+    { id:6, name:"Charizard", type: { primary:"Fire", secondary:"Flying" } }
+*/
+```
+
+**Good:**
+
+```javascript
+//filter()
+let filterPokemons = pokemons.filter(
+  (pokemon) => pokemon.type.primary === "Fire"
+);
+console.log(filterPokemons);
+
+/*
+    { id:4, name:"Charmander", type: { primary:"Fire", secondary:null } }
+    { id:5, name:"Charmeleon", type: { primary:"Fire", secondary:null } }
+    { id:6, name:"Charizard", type: { primary:"Fire", secondary:"Flying" } }
+*/
+```
+
+**[⬆ Back to the top](#javascript-tips)**
+
+## **Foreach**
+
+Foreach Loop is a control flow statement for traversing items in a collection.
+
+```javascript
+const pokemons = [
+  { id: 1, name: "Bulbasaur", type: { primary: "Grass", secondary: "Poison" } },
+  { id: 2, name: "Ivysaur", type: { primary: "Grass", secondary: "Poison" } },
+  { id: 3, name: "Venusaur", type: { primary: "Grass", secondary: "Poison" } },
+  { id: 4, name: "Charmander", type: { primary: "Fire", secondary: null } },
+  { id: 5, name: "Charmeleon", type: { primary: "Fire", secondary: null } },
+  { id: 6, name: "Charizard", type: { primary: "Fire", secondary: "Flying" } },
+  { id: 7, name: "Squirtle", type: { primary: "Water", secondary: null } },
+  { id: 8, name: "Wartotle", type: { primary: "Water", secondary: null } },
+  { id: 9, name: "Blastoise", type: { primary: "Water", secondary: null } },
+];
+```
+
+**Bad:**
+
+```javascript
+//forLoop
+for (let i = 0; i < pokemons.length; i++) {
+  console.log(pokemons[i]);
+}
+
+/*
+    { id:1, name:"Bulbasaur", type: { primary:"Grass", secondary:"Poison" } }
+    { id:2, name:"Ivysaur", type: { primary:"Grass", secondary:"Poison" } }
+    { id:3, name:"Venusaur", type: { primary:"Grass", secondary:"Poison" } }
+    { id:4, name:"Charmander", type: { primary:"Fire", secondary:null } }
+    { id:5, name:"Charmeleon", type: { primary:"Fire", secondary:null } }
+    { id:6, name:"Charizard", type: { primary:"Fire", secondary:"Flying" } }
+    { id:7, name:"Squirtle", type: { primary:"Water", secondary:null } }
+    { id:8, name:"Wartotle", type: { primary:"Water", secondary:null } }
+    { id:9, name:"Blastoise", type: { primary:"Water", secondary:null } }
+*/
+```
+
+**Good:**
+
+```javascript
+//forEach
+pokemons.forEach((pokemon) => {
+  console.log(pokemon);
+});
+
+/*
+    { id:1, name:"Bulbasaur", type: { primary:"Grass", secondary:"Poison" } }
+    { id:2, name:"Ivysaur", type: { primary:"Grass", secondary:"Poison" } }
+    { id:3, name:"Venusaur", type: { primary:"Grass", secondary:"Poison" } }
+    { id:4, name:"Charmander", type: { primary:"Fire", secondary:null } }
+    { id:5, name:"Charmeleon", type: { primary:"Fire", secondary:null } }
+    { id:6, name:"Charizard", type: { primary:"Fire", secondary:"Flying" } }
+    { id:7, name:"Squirtle", type: { primary:"Water", secondary:null } }
+    { id:8, name:"Wartotle", type: { primary:"Water", secondary:null } }
+    { id:9, name:"Blastoise", type: { primary:"Water", secondary:null } }
+*/
+```
+
+**[⬆ Back to the top](#javascript-tips)**
+
+## **Group and GroupMap**
+
+```javascript
+const numbers = [1, 2, 3, 4, 5, 6];
+numbers.group((num) => (num % 2 === 0 ? "Even" : "Odd"));
+console.log(numbers);
+/*
+  {
+    Odd: [1, 3, 5],
+    Even: [2, 4, 6]
+   }
+*/
+```
+
+**[⬆ Back to the top](#javascript-tips)**
+
+## **If Validation**
+
+**Bad:**
+
+```javascript
+function identifyAnimal(animal) {
+  if (animal === "Dog") {
+    return "Pluto";
+  } else if (animal === "Cat") {
+    return "Tom";
+  } else if (animal === "Mouse") {
+    return "Jerry";
+  } else if (animal === "Duck") {
+    return "Donald";
+  }
+}
+
+console.log(identifyAnimal("Dog")); // Pluto
+```
+
+**Good:**
+
+```javascript
+function identifyAnimal(animal) {
+  const animals = {
+    Dog: "Pluto",
+    Cat: "Tom",
+    Mouse: "Jerry",
+    Duck: "Donald",
+  };
+
+  return animals[animal];
+}
+
+console.log(identifyAnimal("Dog")); // Pluto
+```
+
+**[⬆ Back to the top](#javascript-tips)**
+
 ## **Immutable Reverse**
 
 ```javascript
@@ -590,18 +396,31 @@ console.log(numbers); // numbers [1, 2, 3]
 
 **[⬆ Back to the top](#javascript-tips)**
 
-## **Group and GroupMap**
+## **Multiple Conditions**
+
+**Bad:**
 
 ```javascript
-const numbers = [1, 2, 3, 4, 5, 6];
-numbers.group((num) => (num % 2 === 0 ? "Even" : "Odd"));
-console.log(numbers);
-/*
-  {
-    Odd: [1, 3, 5],
-    Even: [2, 4, 6]
-   }
-*/
+let shinobi = "Naruto";
+
+if (
+  shinobi === "Naruto" ||
+  shinobi === "Kakashi" ||
+  shinobi === "Minato" ||
+  shinobi === "Jiraiya"
+) {
+  // code
+}
+```
+
+**Good:**
+
+```javascript
+let shinobi = "Naruto";
+
+if (["Naruto", "Kakashi", "Minato", "Jiraiya"].includes(shinobi)) {
+  // code
+}
 ```
 
 **[⬆ Back to the top](#javascript-tips)**
@@ -629,6 +448,187 @@ const liter = new Intl.NumberFormat("en-US", {
   unit: "liter",
   unitDisplay: "long",
 }).format(number); // 12,345 liters
+```
+
+**[⬆ Back to the top](#javascript-tips)**
+
+## **Object Literals**
+
+**Bad:**
+
+```javascript
+const dayOfTheWeek = 1;
+
+switch (dayOfTheWeek) {
+  case 1:
+    selectedDay = "Monday";
+    break;
+  case 2:
+    selectedDay = "Tuesday";
+    break;
+  case 3:
+    selectedDay = "Wednesday";
+    break;
+  case 4:
+    selectedDay = "Thursday";
+    break;
+  case 5:
+    selectedDay = "Friday";
+    break;
+  case 6:
+    selectedDay = "Saturday";
+    break;
+  default:
+    selectedDay = "Sunday";
+}
+
+console.log(selectedDay); //Monday
+```
+
+**Good:**
+
+```javascript
+const dayOfTheWeek = 2;
+
+const daysOfTheWeek = {
+  0: "Sunday",
+  1: "Monday",
+  2: "Tuesday",
+  3: "Wednesday",
+  4: "Thursday",
+  5: "Friday",
+  6: "Saturday",
+};
+
+const selectedDay = daysOfTheWeek[dayOfTheWeek];
+
+console.log(selectedDay); // Tuesday
+```
+
+**[⬆ Back to the top](#javascript-tips)**
+
+## **Pipe**
+
+```javascript
+const plusTen = (number) => number + 10;
+const dividedByFive = (number) => number / 5;
+const multipliedByThree = (number) => number * 3;
+const minusTwo = (number) => number - 2;
+
+const combineOperations = (initValue, arrOfFuncs) =>
+  arrOfFuncs.reduce((acc, func) => func(acc), initValue);
+
+console.log(
+  combineOperations(5, [plusTen, dividedByFive, multipliedByThree, minusTwo])
+);
+
+// 7
+```
+
+**[⬆ Back to the top](#javascript-tips)**
+
+## **Promise**
+
+**Bad:**
+
+```javascript
+const users = await getUser();
+const products = await getProducts();
+```
+
+**Good:**
+
+```javascript
+const [users, products] = await Promise.all([getUsers(), getProducts()]);
+```
+
+**[⬆ Back to the top](#javascript-tips)**
+
+## **Spread**
+
+How to Copy an Array
+
+```javascript
+let arr = ["a", "b", "c"];
+```
+
+**Bad:**
+
+```javascript
+let arr2 = arr;
+arr2.push("d");
+console.log(arr); // ['a', 'b', 'c', 'd']
+console.log(arr2); // ['a', 'b', 'c', 'd']
+```
+
+**Good:**
+
+```javascript
+let arr2 = [...arr];
+arr2.push("d");
+console.log(arr); // ['a', 'b', 'c']
+console.log(arr2); // ['a', 'b', 'c', 'd']
+```
+
+**[⬆ Back to the top](#javascript-tips)**
+
+## **Ternary Operator**
+
+**Bad:**
+
+```javascript
+let x = 20;
+
+if (x > 10) {
+  test = true;
+} else {
+  test = false;
+}
+
+console.log(test); //true
+```
+
+**Good:**
+
+```javascript
+let x = 20;
+
+// Option 1
+let test1 = x > 10 ? true : false;
+console.log(test1); //true
+
+// Option 2
+let test2 = x > 10;
+console.log(test2); //true
+```
+
+**[⬆ Back to the top](#javascript-tips)**
+
+## **Using URL Instead of String**
+
+URL is specifically made to deal with URLs. No need to manually parse strings to extract or even change parts of it. A URL makes it easy to access specific parts of a URL, and to modify those parts.
+
+**Bad:**
+
+```javascript
+const url = "https://mysite.com/path/to/resource?query=param";
+// How to access URL parts?
+```
+
+**Good:**
+
+```javascript
+const url = new URL("https://mysite.com/path/to/resource?query=param");
+
+url.host; // mysite.com
+url.pathname; // /path/to/resource
+url.searchParams.get("query"); // param
+
+// You can even modify the url
+url.pathname = "other/path/to/resource";
+
+// And changes are immediately reflected
+url; // https://mysite.com/other/path/to/resource?query=param
 ```
 
 **[⬆ Back to the top](#javascript-tips)**
