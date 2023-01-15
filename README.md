@@ -1,7 +1,7 @@
 # javascript-tips
 
 01. [Array Order Alphabetically](#array-order-alphabetically)
-01. [Array At](#array-at)
+01. [Array.at()](#array-at)
 02. [Date](#date)
 03. [Deep Clone](#deep-clone)
 04. [Filter](#filter)
