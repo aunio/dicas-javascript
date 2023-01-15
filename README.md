@@ -1,6 +1,7 @@
 # javascript-tips
 
 01. [Array Order Alphabetically](#array-order-alphabetically)
+01. [Array.at()](#array.at())
 02. [Date](#date)
 03. [Deep Clone](#deep-clone)
 04. [Filter](#filter)
@@ -43,6 +44,28 @@ console.log(movies.sort(Intl.Collator().compare));
     "Senhor dos Anéis"
   ]
 */
+```
+
+**[⬆ Back to the top](#javascript-tips)**
+
+## **Array.at()**
+
+Allows us to search for an item by its index
+
+```javascript
+  let arr = [1, 2, 3, 4, 5, 6, 7, 9]
+```
+
+**Bad:**
+
+```javascript
+  arr[arr.length -1] // 9
+```
+
+**Good:**
+
+```javascript
+  arr.at(-1) // 9
 ```
 
 **[⬆ Back to the top](#javascript-tips)**
