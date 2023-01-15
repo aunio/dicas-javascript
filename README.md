@@ -52,6 +52,7 @@ console.log(movies.sort(Intl.Collator().compare));
 
 Allows us to search for an item by its index
 
+**Array:**
 ```javascript
   let arr = [1, 2, 3, 4, 5, 6, 7, 9]
 ```
