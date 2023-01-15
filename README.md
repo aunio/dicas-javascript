@@ -1,7 +1,7 @@
 # javascript-tips
 
 01. [Array Order Alphabetically](#array-order-alphabetically)
-01. [Array.at()](#array-at)
+01. [Array.at()](#at())
 02. [Date](#date)
 03. [Deep Clone](#deep-clone)
 04. [Filter](#filter)
@@ -48,7 +48,7 @@ console.log(movies.sort(Intl.Collator().compare));
 
 **[⬆ Back to the top](#javascript-tips)**
 
-## **Array at**
+## **at()**
 
 Allows us to search for an item by its index
 
