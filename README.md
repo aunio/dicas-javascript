@@ -458,20 +458,21 @@ const euro = new Intl.NumberFormat("de-DE", {
   style: "currency",
   currency: "EUR",
 }).format(number);
-console.log(numberEuro); // 12.345,00 €
+console.log(euro); // 12.345,00 €
 
 const dollar = new Intl.NumberFormat("en-US", {
   style: "currency",
   currency: "USD",
   currencyDisplay: "name",
 }).format(number);
-console.log(numberDollar); // 12,345.00 US dollars
+console.log(dollar); // 12,345.00 US dollars
 
 const liter = new Intl.NumberFormat("en-US", {
   style: "unit",
   unit: "liter",
   unitDisplay: "long",
-}).format(number); // 12,345 liters
+}).format(number);
+console.log(liter); // 12,345 liters
 ```
 
 **[⬆ Back to the top](#javascript-tips)**
