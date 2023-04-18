@@ -456,23 +456,28 @@ const number = 12345;
 
 const euro = new Intl.NumberFormat("de-DE", {
   style: "currency",
-  currency: "EUR",
+  currency: "EUR"
 }).format(number);
 console.log(euro); // 12.345,00 €
 
 const dollar = new Intl.NumberFormat("en-US", {
   style: "currency",
   currency: "USD",
-  currencyDisplay: "name",
+  currencyDisplay: "name"
 }).format(number);
 console.log(dollar); // 12,345.00 US dollars
 
 const liter = new Intl.NumberFormat("en-US", {
   style: "unit",
   unit: "liter",
-  unitDisplay: "long",
+  unitDisplay: "long"
 }).format(number);
 console.log(liter); // 12,345 liters
+
+const followers = new Intl.NumberFormat("en-US", {
+  notation: "compact"
+}).format(number);
+console.log(followers); // 12K
 ```
 
 **[⬆ Back to the top](#javascript-tips)**
