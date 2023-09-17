@@ -1,6 +1,6 @@
 # javascript-tips
 
-1.  [Array em ordem alfabética](#array-em-ordem-alfabetica)
+1.  [Array em ordem alfabética](#array-em-ordem-alfabética)
 2.  [Array.at()](#array-at)
 3.  [Date](#date)
 4.  [Deep Clone](#deep-clone)
