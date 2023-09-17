@@ -1,31 +1,31 @@
 # javascript-tips
 
 1.  [Array em ordem alfabética](#array-em-ordem-alfabetica)
-1.  [Array.at()](#array-at)
-1.  [Date](#date)
-1.  [Deep Clone](#deep-clone)
-1.  [Filter](#filter)
-1.  [Foreach Loop](#foreach)
-1.  [Group and GroupMap](#group-and-groupmap)
-1.  [If Validation](#if-validation)
-1.  [Immutable Reverse](#immutable-reverse)
-1.  [Immutable Sort](#immutable-sort)
-1.  [Immutable Splice](#immutable-splice)
-1.  [Multiple Conditions](#multiple-conditions)
-1.  [Number Format](#number-format)
-1.  [Object Literals](#object-literals)
-1.  [Pipe](#pipe)
-1.  [Promise](#promise)
-1.  [Spread](#spread)
-1.  [Ternary Operator](#ternary-operator)
-1.  [Using URL Instead of String](#using-url-instead-of-string)
+2.  [Array.at()](#array-at)
+3.  [Date](#date)
+4.  [Deep Clone](#deep-clone)
+5.  [Filter](#filter)
+6.  [Foreach Loop](#foreach)
+7.  [Group and GroupMap](#group-and-groupmap)
+8.  [If Validation](#if-validation)
+9.  [Immutable Reverse](#immutable-reverse)
+10. [Immutable Sort](#immutable-sort)
+11. [Immutable Splice](#immutable-splice)
+12. [Multiple Conditions](#multiple-conditions)
+13. [Number Format](#number-format)
+14. [Object Literals](#object-literals)
+15. [Pipe](#pipe)
+16. [Promise](#promise)
+17. [Spread](#spread)
+18. [Ternary Operator](#ternary-operator)
+19. [Using URL Instead of String](#using-url-instead-of-string)
 
 ## **Array em ordem alfabética**
 
 Permite deixar um array em ordem afabética levando em consideração letras com acentuação
 
 ```javascript
-const filmes = [
+const movies = [
   "Harry Potter",
   "Senhor dos Anéis",
   "Árvore da Vida",
@@ -33,7 +33,7 @@ const filmes = [
   "8 Mile - Rua das Ilusões",
 ];
 
-console.log(filmes.sort(Intl.Collator().compare));
+console.log(movies.sort(Intl.Collator().compare));
 
 /* 
   [
