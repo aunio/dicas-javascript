@@ -1,31 +1,31 @@
 # javascript-tips
 
-01. [Array Order Alphabetically](#array-order-alphabetically)
-01. [Array.at()](#array-at)
-02. [Date](#date)
-03. [Deep Clone](#deep-clone)
-04. [Filter](#filter)
-05. [Foreach Loop](#foreach)
-06. [Group and GroupMap](#group-and-groupmap)
-07. [If Validation](#if-validation)
-08. [Immutable Reverse](#immutable-reverse)
-09. [Immutable Sort](#immutable-sort)
-10. [Immutable Splice](#immutable-splice)
-11. [Multiple Conditions](#multiple-conditions)
-12. [Number Format](#number-format)
-13. [Object Literals](#object-literals)
-14. [Pipe](#pipe)
-15. [Promise](#promise)
-16. [Spread](#spread)
-17. [Ternary Operator](#ternary-operator)
-18. [Using URL Instead of String](#using-url-instead-of-string)
+1.  [Array em ordem alfabética](#array-em-ordem-alfabetica)
+1.  [Array.at()](#array-at)
+1.  [Date](#date)
+1.  [Deep Clone](#deep-clone)
+1.  [Filter](#filter)
+1.  [Foreach Loop](#foreach)
+1.  [Group and GroupMap](#group-and-groupmap)
+1.  [If Validation](#if-validation)
+1.  [Immutable Reverse](#immutable-reverse)
+1.  [Immutable Sort](#immutable-sort)
+1.  [Immutable Splice](#immutable-splice)
+1.  [Multiple Conditions](#multiple-conditions)
+1.  [Number Format](#number-format)
+1.  [Object Literals](#object-literals)
+1.  [Pipe](#pipe)
+1.  [Promise](#promise)
+1.  [Spread](#spread)
+1.  [Ternary Operator](#ternary-operator)
+1.  [Using URL Instead of String](#using-url-instead-of-string)
 
-## **Array Order Alphabetically**
+## **Array em ordem alfabética**
 
-Sorting strings with numbers and accented characters.
+Permite deixar um array em ordem afabética levando em consideração letras com acentuação
 
 ```javascript
-const movies = [
+const filmes = [
   "Harry Potter",
   "Senhor dos Anéis",
   "Árvore da Vida",
@@ -33,7 +33,7 @@ const movies = [
   "8 Mile - Rua das Ilusões",
 ];
 
-console.log(movies.sort(Intl.Collator().compare));
+console.log(filmes.sort(Intl.Collator().compare));
 
 /* 
   [
@@ -53,20 +53,21 @@ console.log(movies.sort(Intl.Collator().compare));
 Allows us to search for an item by its index
 
 **Array:**
+
 ```javascript
-  let arr = [1, 2, 3, 4, 5, 6, 7, 9]
+let arr = [1, 2, 3, 4, 5, 6, 7, 9];
 ```
 
 **Bad:**
 
 ```javascript
-  arr[arr.length -1] // 9
+arr[arr.length - 1]; // 9
 ```
 
 **Good:**
 
 ```javascript
-  arr.at(-1) // 9
+arr.at(-1); // 9
 ```
 
 **[⬆ Back to the top](#javascript-tips)**
@@ -456,26 +457,26 @@ const number = 12345;
 
 const euro = new Intl.NumberFormat("de-DE", {
   style: "currency",
-  currency: "EUR"
+  currency: "EUR",
 }).format(number);
 console.log(euro); // 12.345,00 €
 
 const dollar = new Intl.NumberFormat("en-US", {
   style: "currency",
   currency: "USD",
-  currencyDisplay: "name"
+  currencyDisplay: "name",
 }).format(number);
 console.log(dollar); // 12,345.00 US dollars
 
 const liter = new Intl.NumberFormat("en-US", {
   style: "unit",
   unit: "liter",
-  unitDisplay: "long"
+  unitDisplay: "long",
 }).format(number);
 console.log(liter); // 12,345 liters
 
 const followers = new Intl.NumberFormat("en-US", {
-  notation: "compact"
+  notation: "compact",
 }).format(number);
 console.log(followers); // 12K
 ```
