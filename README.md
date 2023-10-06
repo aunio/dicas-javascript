@@ -1,4 +1,4 @@
-# javascript-tips
+# dicas-javascript
 
 1.  [Array em ordem alfabética](#array-em-ordem-alfabética)
 2.  [Array.at()](#array-at)
@@ -46,11 +46,11 @@ console.log(movies.sort(Intl.Collator().compare));
 */
 ```
 
-**[⬆ Back to the top](#javascript-tips)**
+**[⬆ Voltar para o topo](#dicas-javascript)**
 
 ## **Array at**
 
-Allows us to search for an item by its index
+Nos permite procurar um item pelo seu índice
 
 **Array:**
 
@@ -70,7 +70,7 @@ arr[arr.length - 1]; // 9
 arr.at(-1); // 9
 ```
 
-**[⬆ Back to the top](#javascript-tips)**
+**[⬆ Voltar para o topo](#dicas-javascript)**
 
 ## **Date**
 
@@ -106,7 +106,7 @@ let newDate2 = date.toLocaleDateString("pt-br", {
 console.log(newDate2); // 01/01/2021
 ```
 
-**[⬆ Back to the top](#javascript-tips)**
+**[⬆ Voltar para o topo](#dicas-javascript)**
 
 ## **Deep Clone**
 
@@ -218,11 +218,11 @@ console.log(copiedStrawHatPirates);
 */
 ```
 
-**[⬆ Back to the top](#javascript-tips)**
+**[⬆ Voltar para o topo](#dicas-javascript)**
 
 ## **Filter**
 
-The filter() method creater a new array with all the elements that pass the test implemented by the callback() function.
+O método filter() cria um novo array com todos os elementos que passam no teste implementado pela função callback().
 
 ```javascript
 const pokemons = [
@@ -272,11 +272,11 @@ console.log(filterPokemons);
 */
 ```
 
-**[⬆ Back to the top](#javascript-tips)**
+**[⬆ Voltar para o topo](#dicas-javascript)**
 
 ## **Foreach**
 
-Foreach Loop is a control flow statement for traversing items in a collection.
+Foreach é uma instrução de fluxo de controle para percorrer itens em uma coleção.
 
 ```javascript
 const pokemons = [
@@ -334,7 +334,7 @@ pokemons.forEach((pokemon) => {
 */
 ```
 
-**[⬆ Back to the top](#javascript-tips)**
+**[⬆ Voltar para o topo](#dicas-javascript)**
 
 ## **Group and GroupMap**
 
@@ -350,7 +350,7 @@ console.log(numbers);
 */
 ```
 
-**[⬆ Back to the top](#javascript-tips)**
+**[⬆ Voltar para o topo](#dicas-javascript)**
 
 ## **If Validation**
 
@@ -389,7 +389,7 @@ function identifyAnimal(animal) {
 console.log(identifyAnimal("Dog")); // Pluto
 ```
 
-**[⬆ Back to the top](#javascript-tips)**
+**[⬆ Voltar para o topo](#dicas-javascript)**
 
 ## **Immutable Reverse**
 
@@ -399,7 +399,7 @@ sequentialNumbers.toReversed(); // [3, 2, 1]
 console.log(sequentialNumbers); // [1, 2, 3]
 ```
 
-**[⬆ Back to the top](#javascript-tips)**
+**[⬆ Voltar para o topo](#dicas-javascript)**
 
 ## **Immutable Sort**
 
@@ -409,7 +409,7 @@ outOfOrder.toSorted(); // Uint8Array [1, 2, 3]
 console.log(outOfOrder); // Uint8Array [3, 1, 2]
 ```
 
-**[⬆ Back to the top](#javascript-tips)**
+**[⬆ Voltar para o topo](#dicas-javascript)**
 
 ## **Immutable Splice**
 
@@ -419,7 +419,7 @@ numbers.toSpliced(2, 2); // [3]
 console.log(numbers); // numbers [1, 2, 3]
 ```
 
-**[⬆ Back to the top](#javascript-tips)**
+**[⬆ Voltar para o topo](#dicas-javascript)**
 
 ## **Multiple Conditions**
 
@@ -448,7 +448,7 @@ if (["Naruto", "Kakashi", "Minato", "Jiraiya"].includes(shinobi)) {
 }
 ```
 
-**[⬆ Back to the top](#javascript-tips)**
+**[⬆ Voltar para o topo](#dicas-javascript)**
 
 ## **Number Format**
 
@@ -481,7 +481,7 @@ const followers = new Intl.NumberFormat("en-US", {
 console.log(followers); // 12K
 ```
 
-**[⬆ Back to the top](#javascript-tips)**
+**[⬆ Voltar para o topo](#dicas-javascript)**
 
 ## **Object Literals**
 
@@ -536,7 +536,7 @@ const selectedDay = daysOfTheWeek[dayOfTheWeek];
 console.log(selectedDay); // Tuesday
 ```
 
-**[⬆ Back to the top](#javascript-tips)**
+**[⬆ Voltar para o topo](#dicas-javascript)**
 
 ## **Pipe**
 
@@ -556,7 +556,7 @@ console.log(
 // 7
 ```
 
-**[⬆ Back to the top](#javascript-tips)**
+**[⬆ Voltar para o topo](#dicas-javascript)**
 
 ## **Promise**
 
@@ -573,7 +573,7 @@ const products = await getProducts();
 const [users, products] = await Promise.all([getUsers(), getProducts()]);
 ```
 
-**[⬆ Back to the top](#javascript-tips)**
+**[⬆ Voltar para o topo](#dicas-javascript)**
 
 ## **Spread**
 
@@ -601,7 +601,7 @@ console.log(arr); // ['a', 'b', 'c']
 console.log(arr2); // ['a', 'b', 'c', 'd']
 ```
 
-**[⬆ Back to the top](#javascript-tips)**
+**[⬆ Voltar para o topo](#dicas-javascript)**
 
 ## **Ternary Operator**
 
@@ -633,11 +633,11 @@ let test2 = x > 10;
 console.log(test2); //true
 ```
 
-**[⬆ Back to the top](#javascript-tips)**
+**[⬆ Voltar para o topo](#dicas-javascript)**
 
 ## **Using URL Instead of String**
 
-URL is specifically made to deal with URLs. No need to manually parse strings to extract or even change parts of it. A URL makes it easy to access specific parts of a URL, and to modify those parts.
+URL é feito especificamente para lidar com URLs. Não há necessidade de analisar strings manualmente para extrair ou até mesmo alterar partes delas. Um URL facilita o acesso a partes específicas de um URL e a modificação dessas partes.
 
 **Bad:**
 
@@ -662,4 +662,4 @@ url.pathname = "other/path/to/resource";
 url; // https://mysite.com/other/path/to/resource?query=param
 ```
 
-**[⬆ Back to the top](#javascript-tips)**
+**[⬆ Voltar para o topo](#dicas-javascript)**
