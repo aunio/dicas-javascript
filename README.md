@@ -1,6 +1,6 @@
 # dicas-javascript
 
-1.  [Array em ordem alfabética](#array-em-ordem-alfabética)
+1.  [Array in Alphabetical Order](#array-in-alphabetical-order)
 2.  [Array.at()](#array-at)
 3.  [Date](#date)
 4.  [Deep Clone](#deep-clone)
@@ -20,7 +20,7 @@
 18. [Ternary Operator](#ternary-operator)
 19. [Using URL Instead of String](#using-url-instead-of-string)
 
-## **Array em ordem alfabética**
+## **Array in Alphabetical Order**
 
 Permite deixar um array em ordem afabética levando em consideração letras com acentuação
 
